@@ -1,0 +1,2341 @@
+2026-02-01 21:46:04,063 - INFO - Starting Task 3 generalization
+2026-02-01 21:46:04,063 - INFO - Using mapping method: decision_tree
+2026-02-01 21:46:04,063 - INFO - Seasons mode: 1
+2026-02-01 21:46:04,063 - INFO - Resolved training EPW: HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-01 21:46:04,064 - INFO - Resolved training EPW: NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-01 21:46:04,064 - INFO - Resolved external EPW: SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-01 21:46:04,064 - INFO - Reading EPW data
+2026-02-01 21:46:04,118 - INFO - Read EPW for HKG
+2026-02-01 21:46:04,163 - INFO - Read EPW for NOR
+2026-02-01 21:46:04,206 - INFO - Read external EPW for Riyadh
+2026-02-01 21:46:04,206 - INFO - Inferring parameters from results
+2026-02-01 21:46:04,222 - INFO - Reading file: results\task1_hourly_best.csv
+2026-02-01 21:46:04,222 - INFO - Skipping metric column: Q_solar_total
+2026-02-01 21:46:04,222 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-01 21:46:04,222 - INFO - Skipping metric column: Mask_Target
+2026-02-01 21:46:04,222 - INFO - Reading file: results\task2_best_solution.csv
+2026-02-01 21:46:04,222 - INFO - Skipping metric column: WWR
+2026-02-01 21:46:04,222 - INFO - Column dN has reasonable range [0.00, 0.00], score +1
+2026-02-01 21:46:04,223 - INFO - Selected parameter dN with value 0.0008, score 1
+2026-02-01 21:46:04,223 - INFO - Column dE has reasonable range [0.03, 0.03], score +1
+2026-02-01 21:46:04,223 - INFO - Selected parameter dE with value 0.0305, score 1
+2026-02-01 21:46:04,223 - INFO - Column dS has reasonable range [0.97, 0.97], score +1
+2026-02-01 21:46:04,223 - INFO - Selected parameter dS with value 0.9667, score 1
+2026-02-01 21:46:04,223 - INFO - Column dW has reasonable range [0.02, 0.02], score +1
+2026-02-01 21:46:04,223 - INFO - Selected parameter dW with value 0.0169, score 1
+2026-02-01 21:46:04,223 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 21:46:04,223 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 21:46:04,223 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 21:46:04,223 - INFO - Reading file: results\task2_pareto_results.csv
+2026-02-01 21:46:04,224 - INFO - Skipping metric column: WWR
+2026-02-01 21:46:04,224 - INFO - Column dN has reasonable range [0.00, 0.63], score +1
+2026-02-01 21:46:04,224 - INFO - Selected parameter dN with value 0.0386, score 1
+2026-02-01 21:46:04,224 - INFO - Column dE has reasonable range [0.00, 1.00], score +1
+2026-02-01 21:46:04,224 - INFO - Selected parameter dE with value 0.0433, score 1
+2026-02-01 21:46:04,224 - INFO - Column dS has reasonable range [0.11, 1.00], score +1
+2026-02-01 21:46:04,224 - INFO - Selected parameter dS with value 0.7944, score 1
+2026-02-01 21:46:04,224 - INFO - Column dW has reasonable range [0.00, 0.69], score +1
+2026-02-01 21:46:04,224 - INFO - Selected parameter dW with value 0.0284, score 1
+2026-02-01 21:46:04,224 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 21:46:04,225 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 21:46:04,225 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 21:46:04,225 - INFO - Inferred parameters: {'dN': 0.03859019605076315, 'dE': 0.0432822328820723, 'dS': 0.7944118411851367, 'dW': 0.02843727523995615}
+2026-02-01 21:46:04,225 - INFO - Computing climate features
+2026-02-01 21:46:04,241 - INFO - Saved climate features and labels
+2026-02-01 21:46:04,241 - INFO - Preparing data for mapping
+2026-02-01 21:46:04,242 - INFO - Selected target parameters: ['dN', 'dE']
+2026-02-01 21:46:04,242 - INFO - Fitting mapping with method: decision_tree
+2026-02-01 21:46:04,246 - INFO - Rules for dN:
+2026-02-01 21:46:04,246 - INFO -   |--- value: [0.04]
+2026-02-01 21:46:04,246 - INFO -   
+2026-02-01 21:46:04,246 - INFO - Rules for dE:
+2026-02-01 21:46:04,247 - INFO -   |--- value: [0.04]
+2026-02-01 21:46:04,247 - INFO -   
+2026-02-01 21:46:04,247 - INFO - Recommending templates
+2026-02-01 21:46:04,249 - ERROR - Error: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- S_autumn
+- S_spring
+Traceback (most recent call last):
+  File "E:\project\数学建模美赛\666\src_task3_generalization\task3_generalization.py", line 271, in main
+    template_result = recommend_template(mapping, annual_features)
+  File "E:\project\数学建模美赛\666\src_task3_generalization\mapping.py", line 242, in recommend_template
+    return mapping.recommend_template(features)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "E:\project\数学建模美赛\666\src_task3_generalization\mapping.py", line 200, in recommend_template
+    template = self.predict(X).iloc[0].to_dict()
+               ~~~~~~~~~~~~^^^
+  File "E:\project\数学建模美赛\666\src_task3_generalization\mapping.py", line 139, in predict
+    predictions[target_col] = model.predict(X)
+                              ~~~~~~~~~~~~~^^^
+  File "C:\Users\27330\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\tree\_classes.py", line 530, in predict
+    X = self._validate_X_predict(X, check_input)
+  File "C:\Users\27330\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\tree\_classes.py", line 489, in _validate_X_predict
+    X = validate_data(
+        self,
+    ...<4 lines>...
+        ensure_all_finite=ensure_all_finite,
+    )
+  File "C:\Users\27330\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\validation.py", line 2929, in validate_data
+    _check_feature_names(_estimator, X, reset=reset)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\27330\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\validation.py", line 2787, in _check_feature_names
+    raise ValueError(message)
+ValueError: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- S_autumn
+- S_spring
+
+2026-02-01 21:46:48,107 - INFO - Starting Task 3 generalization
+2026-02-01 21:46:48,108 - INFO - Using mapping method: decision_tree
+2026-02-01 21:46:48,108 - INFO - Seasons mode: 1
+2026-02-01 21:46:48,108 - INFO - Resolved training EPW: HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-01 21:46:48,108 - INFO - Resolved training EPW: NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-01 21:46:48,109 - INFO - Resolved external EPW: SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-01 21:46:48,109 - INFO - Reading EPW data
+2026-02-01 21:46:48,158 - INFO - Read EPW for HKG
+2026-02-01 21:46:48,201 - INFO - Read EPW for NOR
+2026-02-01 21:46:48,244 - INFO - Read external EPW for Riyadh
+2026-02-01 21:46:48,245 - INFO - Inferring parameters from results
+2026-02-01 21:46:48,258 - INFO - Reading file: results\task1_hourly_best.csv
+2026-02-01 21:46:48,258 - INFO - Skipping metric column: Q_solar_total
+2026-02-01 21:46:48,258 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-01 21:46:48,259 - INFO - Skipping metric column: Mask_Target
+2026-02-01 21:46:48,259 - INFO - Reading file: results\task2_best_solution.csv
+2026-02-01 21:46:48,259 - INFO - Skipping metric column: WWR
+2026-02-01 21:46:48,259 - INFO - Column dN has reasonable range [0.00, 0.00], score +1
+2026-02-01 21:46:48,259 - INFO - Selected parameter dN with value 0.0008, score 1
+2026-02-01 21:46:48,259 - INFO - Column dE has reasonable range [0.03, 0.03], score +1
+2026-02-01 21:46:48,259 - INFO - Selected parameter dE with value 0.0305, score 1
+2026-02-01 21:46:48,259 - INFO - Column dS has reasonable range [0.97, 0.97], score +1
+2026-02-01 21:46:48,260 - INFO - Selected parameter dS with value 0.9667, score 1
+2026-02-01 21:46:48,260 - INFO - Column dW has reasonable range [0.02, 0.02], score +1
+2026-02-01 21:46:48,260 - INFO - Selected parameter dW with value 0.0169, score 1
+2026-02-01 21:46:48,260 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 21:46:48,260 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 21:46:48,260 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 21:46:48,260 - INFO - Reading file: results\task2_pareto_results.csv
+2026-02-01 21:46:48,260 - INFO - Skipping metric column: WWR
+2026-02-01 21:46:48,260 - INFO - Column dN has reasonable range [0.00, 0.63], score +1
+2026-02-01 21:46:48,261 - INFO - Selected parameter dN with value 0.0386, score 1
+2026-02-01 21:46:48,261 - INFO - Column dE has reasonable range [0.00, 1.00], score +1
+2026-02-01 21:46:48,261 - INFO - Selected parameter dE with value 0.0433, score 1
+2026-02-01 21:46:48,261 - INFO - Column dS has reasonable range [0.11, 1.00], score +1
+2026-02-01 21:46:48,261 - INFO - Selected parameter dS with value 0.7944, score 1
+2026-02-01 21:46:48,261 - INFO - Column dW has reasonable range [0.00, 0.69], score +1
+2026-02-01 21:46:48,261 - INFO - Selected parameter dW with value 0.0284, score 1
+2026-02-01 21:46:48,261 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 21:46:48,261 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 21:46:48,262 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 21:46:48,262 - INFO - Inferred parameters: {'dN': 0.03859019605076315, 'dE': 0.0432822328820723, 'dS': 0.7944118411851367, 'dW': 0.02843727523995615}
+2026-02-01 21:46:48,262 - INFO - Computing climate features
+2026-02-01 21:46:48,278 - INFO - Saved climate features and labels
+2026-02-01 21:46:48,278 - INFO - Preparing data for mapping
+2026-02-01 21:46:48,279 - INFO - Selected target parameters: ['dN', 'dE']
+2026-02-01 21:46:48,279 - INFO - Fitting mapping with method: decision_tree
+2026-02-01 21:46:48,282 - INFO - Rules for dN:
+2026-02-01 21:46:48,282 - INFO -   |--- value: [0.04]
+2026-02-01 21:46:48,282 - INFO -   
+2026-02-01 21:46:48,282 - INFO - Rules for dE:
+2026-02-01 21:46:48,282 - INFO -   |--- value: [0.04]
+2026-02-01 21:46:48,283 - INFO -   
+2026-02-01 21:46:48,283 - INFO - Recommending templates
+2026-02-01 21:46:48,288 - INFO - Template for HKG: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'HKG'}
+2026-02-01 21:46:48,288 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:46:48,291 - INFO - Template for NOR: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'NOR'}
+2026-02-01 21:46:48,292 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:46:48,293 - INFO - Template for Riyadh: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'Riyadh'}
+2026-02-01 21:46:48,293 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:46:48,294 - INFO - Saved template parameters
+2026-02-01 21:46:48,295 - INFO - Evaluating solutions
+2026-02-01 21:46:48,314 - ERROR - Error: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "E:\project\数学建模美赛\666\src_task3_generalization\task3_generalization.py", line 304, in main
+    comparison = compare_solutions(epw_path, location_template, args.results_dir)
+  File "E:\project\数学建模美赛\666\src_task3_generalization\evaluation.py", line 245, in compare_solutions
+    return evaluator.compare_solutions(epw_path, template)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "E:\project\数学建模美赛\666\src_task3_generalization\evaluation.py", line 168, in compare_solutions
+    'E_cool': (template_eval['E_cool'] - baseline['E_cool']) / baseline['E_cool'] if baseline['E_cool'] > 0 else 0,
+                                                                                     ~~~~~~~~^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2026-02-01 21:47:58,758 - INFO - Starting Task 3 generalization
+2026-02-01 21:47:58,759 - INFO - Using mapping method: decision_tree
+2026-02-01 21:47:58,759 - INFO - Seasons mode: 1
+2026-02-01 21:47:58,759 - INFO - Resolved training EPW: HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-01 21:47:58,759 - INFO - Resolved training EPW: NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-01 21:47:58,760 - INFO - Resolved external EPW: SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-01 21:47:58,760 - INFO - Reading EPW data
+2026-02-01 21:47:58,807 - INFO - Read EPW for HKG
+2026-02-01 21:47:58,852 - INFO - Read EPW for NOR
+2026-02-01 21:47:58,896 - INFO - Read external EPW for Riyadh
+2026-02-01 21:47:58,897 - INFO - Inferring parameters from results
+2026-02-01 21:47:58,911 - INFO - Reading file: results\task1_hourly_best.csv
+2026-02-01 21:47:58,911 - INFO - Skipping metric column: Q_solar_total
+2026-02-01 21:47:58,911 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-01 21:47:58,911 - INFO - Skipping metric column: Mask_Target
+2026-02-01 21:47:58,911 - INFO - Reading file: results\task2_best_solution.csv
+2026-02-01 21:47:58,911 - INFO - Skipping metric column: WWR
+2026-02-01 21:47:58,911 - INFO - Column dN has reasonable range [0.00, 0.00], score +1
+2026-02-01 21:47:58,912 - INFO - Selected parameter dN with value 0.0008, score 1
+2026-02-01 21:47:58,912 - INFO - Column dE has reasonable range [0.03, 0.03], score +1
+2026-02-01 21:47:58,912 - INFO - Selected parameter dE with value 0.0305, score 1
+2026-02-01 21:47:58,912 - INFO - Column dS has reasonable range [0.97, 0.97], score +1
+2026-02-01 21:47:58,912 - INFO - Selected parameter dS with value 0.9667, score 1
+2026-02-01 21:47:58,912 - INFO - Column dW has reasonable range [0.02, 0.02], score +1
+2026-02-01 21:47:58,912 - INFO - Selected parameter dW with value 0.0169, score 1
+2026-02-01 21:47:58,912 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 21:47:58,912 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 21:47:58,913 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 21:47:58,913 - INFO - Reading file: results\task2_pareto_results.csv
+2026-02-01 21:47:58,913 - INFO - Skipping metric column: WWR
+2026-02-01 21:47:58,913 - INFO - Column dN has reasonable range [0.00, 0.63], score +1
+2026-02-01 21:47:58,913 - INFO - Selected parameter dN with value 0.0386, score 1
+2026-02-01 21:47:58,913 - INFO - Column dE has reasonable range [0.00, 1.00], score +1
+2026-02-01 21:47:58,914 - INFO - Selected parameter dE with value 0.0433, score 1
+2026-02-01 21:47:58,914 - INFO - Column dS has reasonable range [0.11, 1.00], score +1
+2026-02-01 21:47:58,914 - INFO - Selected parameter dS with value 0.7944, score 1
+2026-02-01 21:47:58,914 - INFO - Column dW has reasonable range [0.00, 0.69], score +1
+2026-02-01 21:47:58,914 - INFO - Selected parameter dW with value 0.0284, score 1
+2026-02-01 21:47:58,914 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 21:47:58,914 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 21:47:58,914 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 21:47:58,915 - INFO - Inferred parameters: {'dN': 0.03859019605076315, 'dE': 0.0432822328820723, 'dS': 0.7944118411851367, 'dW': 0.02843727523995615}
+2026-02-01 21:47:58,915 - INFO - Computing climate features
+2026-02-01 21:47:58,932 - INFO - Saved climate features and labels
+2026-02-01 21:47:58,932 - INFO - Preparing data for mapping
+2026-02-01 21:47:58,933 - INFO - Selected target parameters: ['dN', 'dE']
+2026-02-01 21:47:58,933 - INFO - Fitting mapping with method: decision_tree
+2026-02-01 21:47:58,936 - INFO - Rules for dN:
+2026-02-01 21:47:58,936 - INFO -   |--- value: [0.04]
+2026-02-01 21:47:58,937 - INFO -   
+2026-02-01 21:47:58,937 - INFO - Rules for dE:
+2026-02-01 21:47:58,937 - INFO -   |--- value: [0.04]
+2026-02-01 21:47:58,937 - INFO -   
+2026-02-01 21:47:58,937 - INFO - Recommending templates
+2026-02-01 21:47:58,941 - INFO - Template for HKG: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'HKG'}
+2026-02-01 21:47:58,942 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:47:58,946 - INFO - Template for NOR: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'NOR'}
+2026-02-01 21:47:58,946 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:47:58,948 - INFO - Template for Riyadh: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'Riyadh'}
+2026-02-01 21:47:58,948 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:47:58,950 - INFO - Saved template parameters
+2026-02-01 21:47:58,950 - INFO - Evaluating solutions
+2026-02-01 21:47:58,969 - INFO - Evaluation for HKG: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'HKG'}
+2026-02-01 21:47:58,981 - INFO - Evaluation for NOR: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'NOR'}
+2026-02-01 21:47:58,991 - INFO - Evaluation for Riyadh: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'Riyadh'}
+2026-02-01 21:47:58,992 - INFO - Saved performance comparison
+2026-02-01 21:47:58,992 - INFO - Performing cross validation
+2026-02-01 21:47:58,993 - INFO - Saved cross validation errors
+2026-02-01 21:47:58,993 - INFO - Cross validation results: {'cv_err_loc': 0.0, 'cv_err_sce': 0.0, 'Err_ext': 0.0}
+2026-02-01 21:47:58,993 - INFO - Generating plots
+2026-02-01 21:47:59,405 - INFO - Generated CDD vs HDD scatter plot
+2026-02-01 21:47:59,725 - INFO - Generated feature bar plot
+2026-02-01 21:47:59,997 - INFO - Generated rules plot
+2026-02-01 21:48:00,436 - INFO - Generated performance comparison plot
+2026-02-01 21:48:00,569 - ERROR - Error: float division by zero
+Traceback (most recent call last):
+  File "E:\project\数学建模美赛\666\src_task3_generalization\task3_generalization.py", line 378, in main
+    plot_riyadh_external(ext_comparison, figs_dir)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\project\数学建模美赛\666\src_task3_generalization\plots.py", line 305, in plot_riyadh_external
+    return plotter.plot_riyadh_external(riyadh_results)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "E:\project\数学建模美赛\666\src_task3_generalization\plots.py", line 214, in plot_riyadh_external
+    cooling_savings = (baseline['E_cool'] - template['E_cool']) / baseline['E_cool'] * 100
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+ZeroDivisionError: float division by zero
+2026-02-01 21:48:29,128 - INFO - Starting Task 3 generalization
+2026-02-01 21:48:29,128 - INFO - Using mapping method: decision_tree
+2026-02-01 21:48:29,128 - INFO - Seasons mode: 1
+2026-02-01 21:48:29,128 - INFO - Resolved training EPW: HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-01 21:48:29,129 - INFO - Resolved training EPW: NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-01 21:48:29,129 - INFO - Resolved external EPW: SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-01 21:48:29,129 - INFO - Reading EPW data
+2026-02-01 21:48:29,176 - INFO - Read EPW for HKG
+2026-02-01 21:48:29,219 - INFO - Read EPW for NOR
+2026-02-01 21:48:29,261 - INFO - Read external EPW for Riyadh
+2026-02-01 21:48:29,262 - INFO - Inferring parameters from results
+2026-02-01 21:48:29,274 - INFO - Reading file: results\task1_hourly_best.csv
+2026-02-01 21:48:29,278 - INFO - Skipping metric column: Q_solar_total
+2026-02-01 21:48:29,278 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-01 21:48:29,278 - INFO - Skipping metric column: Mask_Target
+2026-02-01 21:48:29,278 - INFO - Reading file: results\task2_best_solution.csv
+2026-02-01 21:48:29,278 - INFO - Skipping metric column: WWR
+2026-02-01 21:48:29,279 - INFO - Column dN has reasonable range [0.00, 0.00], score +1
+2026-02-01 21:48:29,279 - INFO - Selected parameter dN with value 0.0008, score 1
+2026-02-01 21:48:29,280 - INFO - Column dE has reasonable range [0.03, 0.03], score +1
+2026-02-01 21:48:29,280 - INFO - Selected parameter dE with value 0.0305, score 1
+2026-02-01 21:48:29,280 - INFO - Column dS has reasonable range [0.97, 0.97], score +1
+2026-02-01 21:48:29,280 - INFO - Selected parameter dS with value 0.9667, score 1
+2026-02-01 21:48:29,280 - INFO - Column dW has reasonable range [0.02, 0.02], score +1
+2026-02-01 21:48:29,280 - INFO - Selected parameter dW with value 0.0169, score 1
+2026-02-01 21:48:29,281 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 21:48:29,281 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 21:48:29,281 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 21:48:29,281 - INFO - Reading file: results\task2_pareto_results.csv
+2026-02-01 21:48:29,281 - INFO - Skipping metric column: WWR
+2026-02-01 21:48:29,281 - INFO - Column dN has reasonable range [0.00, 0.63], score +1
+2026-02-01 21:48:29,281 - INFO - Selected parameter dN with value 0.0386, score 1
+2026-02-01 21:48:29,282 - INFO - Column dE has reasonable range [0.00, 1.00], score +1
+2026-02-01 21:48:29,282 - INFO - Selected parameter dE with value 0.0433, score 1
+2026-02-01 21:48:29,282 - INFO - Column dS has reasonable range [0.11, 1.00], score +1
+2026-02-01 21:48:29,282 - INFO - Selected parameter dS with value 0.7944, score 1
+2026-02-01 21:48:29,282 - INFO - Column dW has reasonable range [0.00, 0.69], score +1
+2026-02-01 21:48:29,282 - INFO - Selected parameter dW with value 0.0284, score 1
+2026-02-01 21:48:29,282 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 21:48:29,282 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 21:48:29,282 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 21:48:29,283 - INFO - Inferred parameters: {'dN': 0.03859019605076315, 'dE': 0.0432822328820723, 'dS': 0.7944118411851367, 'dW': 0.02843727523995615}
+2026-02-01 21:48:29,283 - INFO - Computing climate features
+2026-02-01 21:48:29,299 - INFO - Saved climate features and labels
+2026-02-01 21:48:29,299 - INFO - Preparing data for mapping
+2026-02-01 21:48:29,300 - INFO - Selected target parameters: ['dN', 'dE']
+2026-02-01 21:48:29,303 - INFO - Fitting mapping with method: decision_tree
+2026-02-01 21:48:29,306 - INFO - Rules for dN:
+2026-02-01 21:48:29,306 - INFO -   |--- value: [0.04]
+2026-02-01 21:48:29,310 - INFO -   
+2026-02-01 21:48:29,311 - INFO - Rules for dE:
+2026-02-01 21:48:29,311 - INFO -   |--- value: [0.04]
+2026-02-01 21:48:29,312 - INFO -   
+2026-02-01 21:48:29,312 - INFO - Recommending templates
+2026-02-01 21:48:29,316 - INFO - Template for HKG: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'HKG'}
+2026-02-01 21:48:29,316 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:48:29,319 - INFO - Template for NOR: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'NOR'}
+2026-02-01 21:48:29,320 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:48:29,321 - INFO - Template for Riyadh: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'Riyadh'}
+2026-02-01 21:48:29,322 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:48:29,324 - INFO - Saved template parameters
+2026-02-01 21:48:29,326 - INFO - Evaluating solutions
+2026-02-01 21:48:29,344 - INFO - Evaluation for HKG: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'HKG'}
+2026-02-01 21:48:29,355 - INFO - Evaluation for NOR: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'NOR'}
+2026-02-01 21:48:29,364 - INFO - Evaluation for Riyadh: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'Riyadh'}
+2026-02-01 21:48:29,365 - INFO - Saved performance comparison
+2026-02-01 21:48:29,369 - INFO - Performing cross validation
+2026-02-01 21:48:29,371 - INFO - Saved cross validation errors
+2026-02-01 21:48:29,371 - INFO - Cross validation results: {'cv_err_loc': 0.0, 'cv_err_sce': 0.0, 'Err_ext': 0.0}
+2026-02-01 21:48:29,371 - INFO - Generating plots
+2026-02-01 21:48:29,747 - INFO - Generated CDD vs HDD scatter plot
+2026-02-01 21:48:30,060 - INFO - Generated feature bar plot
+2026-02-01 21:48:30,331 - INFO - Generated rules plot
+2026-02-01 21:48:30,773 - INFO - Generated performance comparison plot
+2026-02-01 21:48:31,038 - INFO - Generated Riyadh external validation plot
+2026-02-01 21:48:31,038 - INFO - Task 3 generalization completed successfully
+2026-02-01 21:51:24,647 - INFO - Starting Task 3 generalization
+2026-02-01 21:51:24,647 - INFO - Using mapping method: decision_tree
+2026-02-01 21:51:24,647 - INFO - Seasons mode: 1
+2026-02-01 21:51:24,647 - INFO - Resolved training EPW: HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-01 21:51:24,648 - INFO - Resolved training EPW: NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-01 21:51:24,648 - INFO - Resolved external EPW: SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-01 21:51:24,648 - INFO - Reading EPW data
+2026-02-01 21:51:24,694 - INFO - Read EPW for HKG
+2026-02-01 21:51:24,736 - INFO - Read EPW for NOR
+2026-02-01 21:51:24,778 - INFO - Read external EPW for Riyadh
+2026-02-01 21:51:24,778 - INFO - Inferring parameters from results
+2026-02-01 21:51:24,790 - INFO - Reading file: results\task1_hourly_best.csv
+2026-02-01 21:51:24,790 - INFO - Skipping metric column: Q_solar_total
+2026-02-01 21:51:24,790 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-01 21:51:24,790 - INFO - Skipping metric column: Mask_Target
+2026-02-01 21:51:24,791 - INFO - Reading file: results\task2_best_solution.csv
+2026-02-01 21:51:24,791 - INFO - Skipping metric column: WWR
+2026-02-01 21:51:24,791 - INFO - Column dN has reasonable range [0.00, 0.00], score +1
+2026-02-01 21:51:24,791 - INFO - Selected parameter dN with value 0.0008, score 1
+2026-02-01 21:51:24,791 - INFO - Column dE has reasonable range [0.03, 0.03], score +1
+2026-02-01 21:51:24,791 - INFO - Selected parameter dE with value 0.0305, score 1
+2026-02-01 21:51:24,792 - INFO - Column dS has reasonable range [0.97, 0.97], score +1
+2026-02-01 21:51:24,792 - INFO - Selected parameter dS with value 0.9667, score 1
+2026-02-01 21:51:24,792 - INFO - Column dW has reasonable range [0.02, 0.02], score +1
+2026-02-01 21:51:24,792 - INFO - Selected parameter dW with value 0.0169, score 1
+2026-02-01 21:51:24,792 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 21:51:24,792 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 21:51:24,792 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 21:51:24,792 - INFO - Reading file: results\task2_pareto_results.csv
+2026-02-01 21:51:24,792 - INFO - Skipping metric column: WWR
+2026-02-01 21:51:24,792 - INFO - Column dN has reasonable range [0.00, 0.63], score +1
+2026-02-01 21:51:24,793 - INFO - Selected parameter dN with value 0.0386, score 1
+2026-02-01 21:51:24,793 - INFO - Column dE has reasonable range [0.00, 1.00], score +1
+2026-02-01 21:51:24,793 - INFO - Selected parameter dE with value 0.0433, score 1
+2026-02-01 21:51:24,793 - INFO - Column dS has reasonable range [0.11, 1.00], score +1
+2026-02-01 21:51:24,793 - INFO - Selected parameter dS with value 0.7944, score 1
+2026-02-01 21:51:24,793 - INFO - Column dW has reasonable range [0.00, 0.69], score +1
+2026-02-01 21:51:24,793 - INFO - Selected parameter dW with value 0.0284, score 1
+2026-02-01 21:51:24,793 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 21:51:24,793 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 21:51:24,793 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 21:51:24,793 - INFO - Inferred parameters: {'dN': 0.03859019605076315, 'dE': 0.0432822328820723, 'dS': 0.7944118411851367, 'dW': 0.02843727523995615}
+2026-02-01 21:51:24,794 - INFO - Computing climate features
+2026-02-01 21:51:24,809 - INFO - Saved climate features and labels
+2026-02-01 21:51:24,809 - INFO - Preparing data for mapping
+2026-02-01 21:51:24,810 - INFO - Selected target parameters: ['dN', 'dE']
+2026-02-01 21:51:24,811 - INFO - Fitting mapping with method: decision_tree
+2026-02-01 21:51:24,813 - INFO - Rules for dN:
+2026-02-01 21:51:24,813 - INFO -   |--- value: [0.04]
+2026-02-01 21:51:24,814 - INFO -   
+2026-02-01 21:51:24,814 - INFO - Rules for dE:
+2026-02-01 21:51:24,814 - INFO -   |--- value: [0.04]
+2026-02-01 21:51:24,814 - INFO -   
+2026-02-01 21:51:24,814 - INFO - Recommending templates
+2026-02-01 21:51:24,819 - INFO - Template for HKG: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'HKG'}
+2026-02-01 21:51:24,819 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:51:24,822 - INFO - Template for NOR: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'NOR'}
+2026-02-01 21:51:24,823 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:51:24,824 - INFO - Template for Riyadh: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'Riyadh'}
+2026-02-01 21:51:24,824 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:51:24,825 - INFO - Saved template parameters
+2026-02-01 21:51:24,825 - INFO - Evaluating solutions
+2026-02-01 21:51:24,842 - INFO - Evaluation for HKG: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'HKG'}
+2026-02-01 21:51:24,852 - INFO - Evaluation for NOR: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'NOR'}
+2026-02-01 21:51:24,861 - INFO - Evaluation for Riyadh: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'Riyadh'}
+2026-02-01 21:51:24,863 - INFO - Saved performance comparison
+2026-02-01 21:51:24,863 - INFO - Performing cross validation
+2026-02-01 21:51:24,864 - INFO - Saved cross validation errors
+2026-02-01 21:51:24,864 - INFO - Cross validation results: {'cv_err_loc': 0.0, 'cv_err_sce': 0.0, 'Err_ext': 0.0}
+2026-02-01 21:51:24,864 - INFO - Generating plots
+2026-02-01 21:51:25,235 - INFO - Generated CDD vs HDD scatter plot
+2026-02-01 21:51:25,560 - INFO - Generated feature bar plot
+2026-02-01 21:51:25,828 - INFO - Generated rules plot
+2026-02-01 21:51:26,268 - INFO - Generated performance comparison plot
+2026-02-01 21:51:26,573 - INFO - Generated Riyadh external validation plot
+2026-02-01 21:51:26,573 - INFO - Task 3 generalization completed successfully
+2026-02-01 21:51:51,954 - INFO - Starting Task 3 generalization
+2026-02-01 21:51:51,955 - INFO - Using mapping method: decision_tree
+2026-02-01 21:51:51,955 - INFO - Seasons mode: 1
+2026-02-01 21:51:51,955 - INFO - Resolved training EPW: HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-01 21:51:51,955 - INFO - Resolved training EPW: NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-01 21:51:51,956 - INFO - Resolved external EPW: SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-01 21:51:51,956 - INFO - Reading EPW data
+2026-02-01 21:51:52,002 - INFO - Read EPW for HKG
+2026-02-01 21:51:52,043 - INFO - Read EPW for NOR
+2026-02-01 21:51:52,085 - INFO - Read external EPW for Riyadh
+2026-02-01 21:51:52,085 - INFO - Inferring parameters from results
+2026-02-01 21:51:52,098 - INFO - Reading file: results\task1_hourly_best.csv
+2026-02-01 21:51:52,098 - INFO - Skipping metric column: Q_solar_total
+2026-02-01 21:51:52,098 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-01 21:51:52,099 - INFO - Skipping metric column: Mask_Target
+2026-02-01 21:51:52,099 - INFO - Reading file: results\task2_best_solution.csv
+2026-02-01 21:51:52,099 - INFO - Skipping metric column: WWR
+2026-02-01 21:51:52,099 - INFO - Column dN has reasonable range [0.00, 0.00], score +1
+2026-02-01 21:51:52,099 - INFO - Selected parameter dN with value 0.0008, score 1
+2026-02-01 21:51:52,099 - INFO - Column dE has reasonable range [0.03, 0.03], score +1
+2026-02-01 21:51:52,100 - INFO - Selected parameter dE with value 0.0305, score 1
+2026-02-01 21:51:52,100 - INFO - Column dS has reasonable range [0.97, 0.97], score +1
+2026-02-01 21:51:52,100 - INFO - Selected parameter dS with value 0.9667, score 1
+2026-02-01 21:51:52,100 - INFO - Column dW has reasonable range [0.02, 0.02], score +1
+2026-02-01 21:51:52,100 - INFO - Selected parameter dW with value 0.0169, score 1
+2026-02-01 21:51:52,100 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 21:51:52,100 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 21:51:52,100 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 21:51:52,100 - INFO - Reading file: results\task2_pareto_results.csv
+2026-02-01 21:51:52,100 - INFO - Skipping metric column: WWR
+2026-02-01 21:51:52,100 - INFO - Column dN has reasonable range [0.00, 0.63], score +1
+2026-02-01 21:51:52,101 - INFO - Selected parameter dN with value 0.0386, score 1
+2026-02-01 21:51:52,101 - INFO - Column dE has reasonable range [0.00, 1.00], score +1
+2026-02-01 21:51:52,101 - INFO - Selected parameter dE with value 0.0433, score 1
+2026-02-01 21:51:52,101 - INFO - Column dS has reasonable range [0.11, 1.00], score +1
+2026-02-01 21:51:52,101 - INFO - Selected parameter dS with value 0.7944, score 1
+2026-02-01 21:51:52,101 - INFO - Column dW has reasonable range [0.00, 0.69], score +1
+2026-02-01 21:51:52,101 - INFO - Selected parameter dW with value 0.0284, score 1
+2026-02-01 21:51:52,101 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 21:51:52,101 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 21:51:52,101 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 21:51:52,101 - INFO - Inferred parameters: {'dN': 0.03859019605076315, 'dE': 0.0432822328820723, 'dS': 0.7944118411851367, 'dW': 0.02843727523995615}
+2026-02-01 21:51:52,102 - INFO - Computing climate features
+2026-02-01 21:51:52,118 - INFO - Saved climate features and labels
+2026-02-01 21:51:52,118 - INFO - Preparing data for mapping
+2026-02-01 21:51:52,119 - INFO - Selected target parameters: ['dN', 'dE']
+2026-02-01 21:51:52,119 - INFO - Fitting mapping with method: decision_tree
+2026-02-01 21:51:52,122 - INFO - Rules for dN:
+2026-02-01 21:51:52,122 - INFO -   |--- value: [0.04]
+2026-02-01 21:51:52,122 - INFO -   
+2026-02-01 21:51:52,122 - INFO - Rules for dE:
+2026-02-01 21:51:52,122 - INFO -   |--- value: [0.04]
+2026-02-01 21:51:52,123 - INFO -   
+2026-02-01 21:51:52,123 - INFO - Recommending templates
+2026-02-01 21:51:52,126 - INFO - Template for HKG: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'HKG'}
+2026-02-01 21:51:52,126 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:51:52,130 - INFO - Template for NOR: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'NOR'}
+2026-02-01 21:51:52,130 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:51:52,131 - INFO - Template for Riyadh: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'Riyadh'}
+2026-02-01 21:51:52,131 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:51:52,132 - INFO - Saved template parameters
+2026-02-01 21:51:52,133 - INFO - Evaluating solutions
+2026-02-01 21:51:52,149 - INFO - Evaluation for HKG: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'HKG'}
+2026-02-01 21:51:52,160 - INFO - Evaluation for NOR: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'NOR'}
+2026-02-01 21:51:52,169 - INFO - Evaluation for Riyadh: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'Riyadh'}
+2026-02-01 21:51:52,170 - INFO - Saved performance comparison
+2026-02-01 21:51:52,170 - INFO - Performing cross validation
+2026-02-01 21:51:52,171 - INFO - Saved cross validation errors
+2026-02-01 21:51:52,171 - INFO - Cross validation results: {'cv_err_loc': 0.0, 'cv_err_sce': 0.0, 'Err_ext': 0.0}
+2026-02-01 21:51:52,171 - INFO - Generating plots
+2026-02-01 21:51:52,570 - INFO - Generated CDD vs HDD scatter plot
+2026-02-01 21:51:52,892 - INFO - Generated feature bar plot
+2026-02-01 21:51:53,194 - INFO - Generated rules plot
+2026-02-01 21:51:53,634 - INFO - Generated performance comparison plot
+2026-02-01 21:51:53,943 - INFO - Generated Riyadh external validation plot
+2026-02-01 21:51:53,943 - INFO - Task 3 generalization completed successfully
+2026-02-01 21:52:21,696 - INFO - Starting Task 3 generalization
+2026-02-01 21:52:21,696 - INFO - Using mapping method: decision_tree
+2026-02-01 21:52:21,696 - INFO - Seasons mode: 1
+2026-02-01 21:52:21,697 - INFO - Resolved training EPW: HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-01 21:52:21,697 - INFO - Resolved training EPW: NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-01 21:52:21,697 - INFO - Resolved external EPW: SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-01 21:52:21,697 - INFO - Reading EPW data
+2026-02-01 21:52:21,743 - INFO - Read EPW for HKG
+2026-02-01 21:52:21,783 - INFO - Read EPW for NOR
+2026-02-01 21:52:21,837 - INFO - Read external EPW for Riyadh
+2026-02-01 21:52:21,837 - INFO - Inferring parameters from results
+2026-02-01 21:52:21,851 - INFO - Reading file: results\task1_hourly_best.csv
+2026-02-01 21:52:21,851 - INFO - Skipping metric column: Q_solar_total
+2026-02-01 21:52:21,851 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-01 21:52:21,851 - INFO - Skipping metric column: Mask_Target
+2026-02-01 21:52:21,851 - INFO - Reading file: results\task2_best_solution.csv
+2026-02-01 21:52:21,852 - INFO - Skipping metric column: WWR
+2026-02-01 21:52:21,852 - INFO - Column dN has reasonable range [0.00, 0.00], score +1
+2026-02-01 21:52:21,852 - INFO - Selected parameter dN with value 0.0008, score 1
+2026-02-01 21:52:21,852 - INFO - Column dE has reasonable range [0.03, 0.03], score +1
+2026-02-01 21:52:21,853 - INFO - Selected parameter dE with value 0.0305, score 1
+2026-02-01 21:52:21,853 - INFO - Column dS has reasonable range [0.97, 0.97], score +1
+2026-02-01 21:52:21,853 - INFO - Selected parameter dS with value 0.9667, score 1
+2026-02-01 21:52:21,853 - INFO - Column dW has reasonable range [0.02, 0.02], score +1
+2026-02-01 21:52:21,854 - INFO - Selected parameter dW with value 0.0169, score 1
+2026-02-01 21:52:21,854 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 21:52:21,854 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 21:52:21,854 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 21:52:21,855 - INFO - Reading file: results\task2_pareto_results.csv
+2026-02-01 21:52:21,855 - INFO - Skipping metric column: WWR
+2026-02-01 21:52:21,855 - INFO - Column dN has reasonable range [0.00, 0.63], score +1
+2026-02-01 21:52:21,855 - INFO - Selected parameter dN with value 0.0386, score 1
+2026-02-01 21:52:21,855 - INFO - Column dE has reasonable range [0.00, 1.00], score +1
+2026-02-01 21:52:21,856 - INFO - Selected parameter dE with value 0.0433, score 1
+2026-02-01 21:52:21,856 - INFO - Column dS has reasonable range [0.11, 1.00], score +1
+2026-02-01 21:52:21,856 - INFO - Selected parameter dS with value 0.7944, score 1
+2026-02-01 21:52:21,856 - INFO - Column dW has reasonable range [0.00, 0.69], score +1
+2026-02-01 21:52:21,856 - INFO - Selected parameter dW with value 0.0284, score 1
+2026-02-01 21:52:21,856 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 21:52:21,857 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 21:52:21,857 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 21:52:21,857 - INFO - Inferred parameters: {'dN': 0.03859019605076315, 'dE': 0.0432822328820723, 'dS': 0.7944118411851367, 'dW': 0.02843727523995615}
+2026-02-01 21:52:21,857 - INFO - Computing climate features
+2026-02-01 21:52:21,875 - INFO - Saved climate features and labels
+2026-02-01 21:52:21,876 - INFO - Preparing data for mapping
+2026-02-01 21:52:21,877 - INFO - Selected target parameters: ['dN', 'dE']
+2026-02-01 21:52:21,877 - INFO - Fitting mapping with method: decision_tree
+2026-02-01 21:52:21,879 - INFO - Rules for dN:
+2026-02-01 21:52:21,880 - INFO -   |--- value: [0.04]
+2026-02-01 21:52:21,880 - INFO -   
+2026-02-01 21:52:21,880 - INFO - Rules for dE:
+2026-02-01 21:52:21,880 - INFO -   |--- value: [0.04]
+2026-02-01 21:52:21,880 - INFO -   
+2026-02-01 21:52:21,880 - INFO - Recommending templates
+2026-02-01 21:52:21,884 - INFO - Template for HKG: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'HKG'}
+2026-02-01 21:52:21,884 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:52:21,888 - INFO - Template for NOR: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'NOR'}
+2026-02-01 21:52:21,888 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:52:21,890 - INFO - Template for Riyadh: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'Riyadh'}
+2026-02-01 21:52:21,890 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:52:21,891 - INFO - Saved template parameters
+2026-02-01 21:52:21,891 - INFO - Evaluating solutions
+2026-02-01 21:52:21,909 - INFO - Evaluation for HKG: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'HKG'}
+2026-02-01 21:52:21,919 - INFO - Evaluation for NOR: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'NOR'}
+2026-02-01 21:52:21,928 - INFO - Evaluation for Riyadh: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'Riyadh'}
+2026-02-01 21:52:21,929 - INFO - Saved performance comparison
+2026-02-01 21:52:21,929 - INFO - Performing cross validation
+2026-02-01 21:52:21,930 - INFO - Saved cross validation errors
+2026-02-01 21:52:21,930 - INFO - Cross validation results: {'cv_err_loc': 0.0, 'cv_err_sce': 0.0, 'Err_ext': 0.0}
+2026-02-01 21:52:21,931 - INFO - Generating plots
+2026-02-01 21:52:22,312 - INFO - Generated CDD vs HDD scatter plot
+2026-02-01 21:52:22,622 - INFO - Generated feature bar plot
+2026-02-01 21:52:22,884 - INFO - Generated rules plot
+2026-02-01 21:52:23,338 - INFO - Generated performance comparison plot
+2026-02-01 21:52:23,636 - INFO - Generated Riyadh external validation plot
+2026-02-01 21:52:23,637 - INFO - Task 3 generalization completed successfully
+2026-02-01 21:54:03,351 - INFO - Starting Task 3 generalization
+2026-02-01 21:54:03,352 - INFO - Using mapping method: decision_tree
+2026-02-01 21:54:03,352 - INFO - Seasons mode: 1
+2026-02-01 21:54:03,352 - INFO - Resolved training EPW: HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-01 21:54:03,353 - INFO - Resolved training EPW: NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-01 21:54:03,353 - INFO - Resolved external EPW: SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-01 21:54:03,353 - INFO - Reading EPW data
+2026-02-01 21:54:03,399 - INFO - Read EPW for HKG
+2026-02-01 21:54:03,439 - INFO - Read EPW for NOR
+2026-02-01 21:54:03,480 - INFO - Read external EPW for Riyadh
+2026-02-01 21:54:03,480 - INFO - Inferring parameters from results
+2026-02-01 21:54:03,494 - INFO - Reading file: results\task1_hourly_best.csv
+2026-02-01 21:54:03,494 - INFO - Skipping metric column: Q_solar_total
+2026-02-01 21:54:03,494 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-01 21:54:03,495 - INFO - Skipping metric column: Mask_Target
+2026-02-01 21:54:03,495 - INFO - Reading file: results\task2_best_solution.csv
+2026-02-01 21:54:03,495 - INFO - Skipping metric column: WWR
+2026-02-01 21:54:03,495 - INFO - Column dN has reasonable range [0.00, 0.00], score +1
+2026-02-01 21:54:03,495 - INFO - Selected parameter dN with value 0.0008, score 1
+2026-02-01 21:54:03,496 - INFO - Column dE has reasonable range [0.03, 0.03], score +1
+2026-02-01 21:54:03,496 - INFO - Selected parameter dE with value 0.0305, score 1
+2026-02-01 21:54:03,496 - INFO - Column dS has reasonable range [0.97, 0.97], score +1
+2026-02-01 21:54:03,496 - INFO - Selected parameter dS with value 0.9667, score 1
+2026-02-01 21:54:03,496 - INFO - Column dW has reasonable range [0.02, 0.02], score +1
+2026-02-01 21:54:03,496 - INFO - Selected parameter dW with value 0.0169, score 1
+2026-02-01 21:54:03,497 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 21:54:03,497 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 21:54:03,497 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 21:54:03,497 - INFO - Reading file: results\task2_pareto_results.csv
+2026-02-01 21:54:03,497 - INFO - Skipping metric column: WWR
+2026-02-01 21:54:03,497 - INFO - Column dN has reasonable range [0.00, 0.63], score +1
+2026-02-01 21:54:03,498 - INFO - Selected parameter dN with value 0.0386, score 1
+2026-02-01 21:54:03,498 - INFO - Column dE has reasonable range [0.00, 1.00], score +1
+2026-02-01 21:54:03,498 - INFO - Selected parameter dE with value 0.0433, score 1
+2026-02-01 21:54:03,498 - INFO - Column dS has reasonable range [0.11, 1.00], score +1
+2026-02-01 21:54:03,498 - INFO - Selected parameter dS with value 0.7944, score 1
+2026-02-01 21:54:03,498 - INFO - Column dW has reasonable range [0.00, 0.69], score +1
+2026-02-01 21:54:03,498 - INFO - Selected parameter dW with value 0.0284, score 1
+2026-02-01 21:54:03,498 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 21:54:03,498 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 21:54:03,498 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 21:54:03,499 - INFO - Inferred parameters: {'dN': 0.03859019605076315, 'dE': 0.0432822328820723, 'dS': 0.7944118411851367, 'dW': 0.02843727523995615}
+2026-02-01 21:54:03,499 - INFO - Computing climate features
+2026-02-01 21:54:03,515 - INFO - Saved climate features and labels
+2026-02-01 21:54:03,515 - INFO - Preparing data for mapping
+2026-02-01 21:54:03,516 - INFO - Selected target parameters: ['dN', 'dE']
+2026-02-01 21:54:03,516 - INFO - Fitting mapping with method: decision_tree
+2026-02-01 21:54:03,519 - INFO - Rules for dN:
+2026-02-01 21:54:03,519 - INFO -   |--- value: [0.04]
+2026-02-01 21:54:03,519 - INFO -   
+2026-02-01 21:54:03,519 - INFO - Rules for dE:
+2026-02-01 21:54:03,519 - INFO -   |--- value: [0.04]
+2026-02-01 21:54:03,519 - INFO -   
+2026-02-01 21:54:03,519 - INFO - Recommending templates
+2026-02-01 21:54:03,523 - INFO - Template for HKG: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'HKG'}
+2026-02-01 21:54:03,524 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:54:03,527 - INFO - Template for NOR: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'NOR'}
+2026-02-01 21:54:03,527 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:54:03,529 - INFO - Template for Riyadh: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'Riyadh'}
+2026-02-01 21:54:03,529 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 21:54:03,531 - INFO - Saved template parameters
+2026-02-01 21:54:03,531 - INFO - Evaluating solutions
+2026-02-01 21:54:03,548 - INFO - Evaluation for HKG: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'HKG'}
+2026-02-01 21:54:03,558 - INFO - Evaluation for NOR: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'NOR'}
+2026-02-01 21:54:03,567 - INFO - Evaluation for Riyadh: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'Riyadh'}
+2026-02-01 21:54:03,568 - INFO - Saved performance comparison
+2026-02-01 21:54:03,569 - INFO - Performing cross validation
+2026-02-01 21:54:03,570 - INFO - Saved cross validation errors
+2026-02-01 21:54:03,570 - INFO - Cross validation results: {'cv_err_loc': 0.0, 'cv_err_sce': 0.0, 'Err_ext': 0.0}
+2026-02-01 21:54:03,570 - INFO - Generating plots
+2026-02-01 21:54:03,961 - INFO - Generated CDD vs HDD scatter plot
+2026-02-01 21:54:04,276 - INFO - Generated feature bar plot
+2026-02-01 21:54:04,541 - INFO - Generated rules plot
+2026-02-01 21:54:04,974 - INFO - Generated performance comparison plot
+2026-02-01 21:54:05,258 - INFO - Generated Riyadh external validation plot
+2026-02-01 21:54:05,259 - INFO - Task 3 generalization completed successfully
+2026-02-01 22:06:15,959 - INFO - Starting Task 3 generalization
+2026-02-01 22:06:15,960 - INFO - Using mapping method: decision_tree
+2026-02-01 22:06:15,960 - INFO - Seasons mode: 1
+2026-02-01 22:06:15,960 - INFO - Resolved training EPW: src/HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-01 22:06:15,960 - INFO - Resolved training EPW: src/NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-01 22:06:15,961 - INFO - Resolved external EPW: src/SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-01 22:06:15,961 - INFO - Reading EPW data
+2026-02-01 22:06:16,006 - INFO - Read EPW for HKG
+2026-02-01 22:06:16,046 - INFO - Read EPW for NOR
+2026-02-01 22:06:16,089 - INFO - Read external EPW for Riyadh
+2026-02-01 22:06:16,089 - INFO - Inferring parameters from results
+2026-02-01 22:06:16,102 - INFO - Reading file: results\task1_hourly_best.csv
+2026-02-01 22:06:16,102 - INFO - Skipping metric column: Q_solar_total
+2026-02-01 22:06:16,102 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-01 22:06:16,102 - INFO - Skipping metric column: Mask_Target
+2026-02-01 22:06:16,102 - INFO - Reading file: results\task2_best_solution.csv
+2026-02-01 22:06:16,103 - INFO - Skipping metric column: WWR
+2026-02-01 22:06:16,103 - INFO - Column dN has reasonable range [0.00, 0.00], score +1
+2026-02-01 22:06:16,103 - INFO - Selected parameter dN with value 0.0008, score 1
+2026-02-01 22:06:16,103 - INFO - Column dE has reasonable range [0.03, 0.03], score +1
+2026-02-01 22:06:16,103 - INFO - Selected parameter dE with value 0.0305, score 1
+2026-02-01 22:06:16,103 - INFO - Column dS has reasonable range [0.97, 0.97], score +1
+2026-02-01 22:06:16,104 - INFO - Selected parameter dS with value 0.9667, score 1
+2026-02-01 22:06:16,104 - INFO - Column dW has reasonable range [0.02, 0.02], score +1
+2026-02-01 22:06:16,104 - INFO - Selected parameter dW with value 0.0169, score 1
+2026-02-01 22:06:16,104 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 22:06:16,104 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 22:06:16,104 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 22:06:16,104 - INFO - Reading file: results\task2_pareto_results.csv
+2026-02-01 22:06:16,104 - INFO - Skipping metric column: WWR
+2026-02-01 22:06:16,104 - INFO - Column dN has reasonable range [0.00, 0.63], score +1
+2026-02-01 22:06:16,105 - INFO - Selected parameter dN with value 0.0386, score 1
+2026-02-01 22:06:16,105 - INFO - Column dE has reasonable range [0.00, 1.00], score +1
+2026-02-01 22:06:16,105 - INFO - Selected parameter dE with value 0.0433, score 1
+2026-02-01 22:06:16,105 - INFO - Column dS has reasonable range [0.11, 1.00], score +1
+2026-02-01 22:06:16,105 - INFO - Selected parameter dS with value 0.7944, score 1
+2026-02-01 22:06:16,105 - INFO - Column dW has reasonable range [0.00, 0.69], score +1
+2026-02-01 22:06:16,105 - INFO - Selected parameter dW with value 0.0284, score 1
+2026-02-01 22:06:16,105 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 22:06:16,105 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 22:06:16,106 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 22:06:16,106 - INFO - Inferred parameters: {'dN': 0.03859019605076315, 'dE': 0.0432822328820723, 'dS': 0.7944118411851367, 'dW': 0.02843727523995615}
+2026-02-01 22:06:16,106 - INFO - Computing climate features
+2026-02-01 22:06:16,129 - INFO - Saved climate features and labels
+2026-02-01 22:06:16,130 - INFO - Preparing data for mapping
+2026-02-01 22:06:16,131 - INFO - Selected target parameters: ['dN', 'dE']
+2026-02-01 22:06:16,131 - INFO - Fitting mapping with method: decision_tree
+2026-02-01 22:06:16,134 - INFO - Rules for dN:
+2026-02-01 22:06:16,134 - INFO -   |--- value: [0.04]
+2026-02-01 22:06:16,135 - INFO -   
+2026-02-01 22:06:16,135 - INFO - Rules for dE:
+2026-02-01 22:06:16,135 - INFO -   |--- value: [0.04]
+2026-02-01 22:06:16,135 - INFO -   
+2026-02-01 22:06:16,135 - INFO - Recommending templates
+2026-02-01 22:06:16,140 - INFO - Template for HKG: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'HKG'}
+2026-02-01 22:06:16,140 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 22:06:16,144 - INFO - Template for NOR: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'NOR'}
+2026-02-01 22:06:16,144 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 22:06:16,145 - INFO - Template for Riyadh: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'Riyadh'}
+2026-02-01 22:06:16,146 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 22:06:16,147 - INFO - Saved template parameters
+2026-02-01 22:06:16,147 - INFO - Evaluating solutions
+2026-02-01 22:06:16,170 - INFO - Evaluation for HKG: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'HKG'}
+2026-02-01 22:06:16,183 - INFO - Evaluation for NOR: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'NOR'}
+2026-02-01 22:06:16,200 - INFO - Evaluation for Riyadh: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'Riyadh'}
+2026-02-01 22:06:16,202 - INFO - Saved performance comparison
+2026-02-01 22:06:16,202 - INFO - Performing cross validation
+2026-02-01 22:06:16,204 - INFO - Saved cross validation errors
+2026-02-01 22:06:16,204 - INFO - Cross validation results: {'cv_err_loc': 0.0, 'cv_err_sce': 0.0, 'Err_ext': 0.0}
+2026-02-01 22:06:16,205 - INFO - Generating plots
+2026-02-01 22:06:16,604 - INFO - Generated CDD vs HDD scatter plot
+2026-02-01 22:06:16,917 - INFO - Generated feature bar plot
+2026-02-01 22:06:17,183 - INFO - Generated rules plot
+2026-02-01 22:06:17,631 - INFO - Generated performance comparison plot
+2026-02-01 22:06:17,930 - INFO - Generated Riyadh external validation plot
+2026-02-01 22:06:17,930 - INFO - Task 3 generalization completed successfully
+2026-02-01 22:09:57,806 - INFO - Starting Task 3 generalization
+2026-02-01 22:09:57,806 - INFO - Using mapping method: decision_tree
+2026-02-01 22:09:57,807 - INFO - Seasons mode: 1
+2026-02-01 22:09:57,807 - INFO - Resolved training EPW: src/HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-01 22:09:57,807 - INFO - Resolved training EPW: src/NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-01 22:09:57,807 - INFO - Resolved external EPW: src/SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-01 22:09:57,807 - INFO - Reading EPW data
+2026-02-01 22:09:57,851 - INFO - Read EPW for HKG
+2026-02-01 22:09:57,891 - INFO - Read EPW for NOR
+2026-02-01 22:09:57,928 - INFO - Read external EPW for Riyadh
+2026-02-01 22:09:57,929 - INFO - Inferring parameters from results
+2026-02-01 22:09:57,940 - INFO - Reading file: results\task1_hourly_best.csv
+2026-02-01 22:09:57,940 - INFO - Skipping metric column: Q_solar_total
+2026-02-01 22:09:57,940 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-01 22:09:57,941 - INFO - Skipping metric column: Mask_Target
+2026-02-01 22:09:57,941 - INFO - Reading file: results\task2_best_solution.csv
+2026-02-01 22:09:57,941 - INFO - Skipping metric column: WWR
+2026-02-01 22:09:57,941 - INFO - Column dN has reasonable range [0.00, 0.00], score +1
+2026-02-01 22:09:57,942 - INFO - Selected parameter dN with value 0.0008, score 1
+2026-02-01 22:09:57,942 - INFO - Column dE has reasonable range [0.03, 0.03], score +1
+2026-02-01 22:09:57,942 - INFO - Selected parameter dE with value 0.0305, score 1
+2026-02-01 22:09:57,942 - INFO - Column dS has reasonable range [0.97, 0.97], score +1
+2026-02-01 22:09:57,943 - INFO - Selected parameter dS with value 0.9667, score 1
+2026-02-01 22:09:57,943 - INFO - Column dW has reasonable range [0.02, 0.02], score +1
+2026-02-01 22:09:57,943 - INFO - Selected parameter dW with value 0.0169, score 1
+2026-02-01 22:09:57,943 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 22:09:57,943 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 22:09:57,943 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 22:09:57,943 - INFO - Reading file: results\task2_pareto_results.csv
+2026-02-01 22:09:57,943 - INFO - Skipping metric column: WWR
+2026-02-01 22:09:57,943 - INFO - Column dN has reasonable range [0.00, 0.63], score +1
+2026-02-01 22:09:57,943 - INFO - Selected parameter dN with value 0.0386, score 1
+2026-02-01 22:09:57,944 - INFO - Column dE has reasonable range [0.00, 1.00], score +1
+2026-02-01 22:09:57,944 - INFO - Selected parameter dE with value 0.0433, score 1
+2026-02-01 22:09:57,944 - INFO - Column dS has reasonable range [0.11, 1.00], score +1
+2026-02-01 22:09:57,944 - INFO - Selected parameter dS with value 0.7944, score 1
+2026-02-01 22:09:57,944 - INFO - Column dW has reasonable range [0.00, 0.69], score +1
+2026-02-01 22:09:57,944 - INFO - Selected parameter dW with value 0.0284, score 1
+2026-02-01 22:09:57,944 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 22:09:57,944 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 22:09:57,944 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 22:09:57,944 - INFO - Inferred parameters: {'dN': 0.03859019605076315, 'dE': 0.0432822328820723, 'dS': 0.7944118411851367, 'dW': 0.02843727523995615}
+2026-02-01 22:09:57,945 - INFO - Computing climate features
+2026-02-01 22:09:57,961 - INFO - Saved climate features and labels
+2026-02-01 22:09:57,965 - INFO - Preparing data for mapping
+2026-02-01 22:09:57,967 - INFO - Selected target parameters: ['dN', 'dE']
+2026-02-01 22:09:57,967 - INFO - Fitting mapping with method: decision_tree
+2026-02-01 22:09:57,969 - INFO - Rules for dN:
+2026-02-01 22:09:57,970 - INFO -   |--- value: [0.04]
+2026-02-01 22:09:57,970 - INFO -   
+2026-02-01 22:09:57,970 - INFO - Rules for dE:
+2026-02-01 22:09:57,970 - INFO -   |--- value: [0.04]
+2026-02-01 22:09:57,970 - INFO -   
+2026-02-01 22:09:57,971 - INFO - Recommending templates
+2026-02-01 22:09:57,974 - INFO - Template for HKG: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'HKG'}
+2026-02-01 22:09:57,975 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 22:09:57,978 - INFO - Template for NOR: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'NOR'}
+2026-02-01 22:09:57,978 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 22:09:57,980 - INFO - Template for Riyadh: {'dN': 0.038590196050763144, 'dE': 0.043282232882072294, 'location': 'Riyadh'}
+2026-02-01 22:09:57,980 - INFO - Rule trace: For dN:
+  |--- value: [0.04]
+  
+For dE:
+  |--- value: [0.04]
+  
+2026-02-01 22:09:57,981 - INFO - Saved template parameters
+2026-02-01 22:09:57,982 - INFO - Evaluating solutions
+2026-02-01 22:09:58,000 - INFO - Evaluation for HKG: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'HKG'}
+2026-02-01 22:09:58,010 - INFO - Evaluation for NOR: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'NOR'}
+2026-02-01 22:09:58,021 - INFO - Evaluation for Riyadh: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'Riyadh'}
+2026-02-01 22:09:58,022 - INFO - Saved performance comparison
+2026-02-01 22:09:58,023 - INFO - Performing cross validation
+2026-02-01 22:09:58,024 - INFO - Saved cross validation errors
+2026-02-01 22:09:58,024 - INFO - Cross validation results: {'cv_err_loc': 0.0, 'cv_err_sce': 0.0, 'Err_ext': 0.0}
+2026-02-01 22:09:58,024 - INFO - Generating plots
+2026-02-01 22:09:58,420 - INFO - Generated CDD vs HDD scatter plot
+2026-02-01 22:09:58,746 - INFO - Generated feature bar plot
+2026-02-01 22:09:59,048 - INFO - Generated rules plot
+2026-02-01 22:09:59,559 - INFO - Generated performance comparison plot
+2026-02-01 22:09:59,869 - INFO - Generated Riyadh external validation plot
+2026-02-01 22:09:59,869 - INFO - Task 3 generalization completed successfully
+2026-02-01 23:06:03,007 - INFO - Starting Task 3 generalization
+2026-02-01 23:06:03,007 - INFO - Using mapping method: rules
+2026-02-01 23:06:03,007 - INFO - Seasons mode: 1
+2026-02-01 23:06:03,007 - INFO - Resolved training EPW: HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-01 23:06:03,008 - INFO - Resolved training EPW: NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-01 23:06:03,008 - INFO - Resolved external EPW: SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-01 23:06:03,008 - INFO - Reading EPW data
+2026-02-01 23:06:03,062 - INFO - Read EPW for HKG
+2026-02-01 23:06:03,108 - INFO - Read EPW for NOR
+2026-02-01 23:06:03,159 - INFO - Read external EPW for Riyadh
+2026-02-01 23:06:03,160 - INFO - Inferring parameters from results
+2026-02-01 23:06:03,177 - INFO - Reading file: results\task1_hourly_best.csv
+2026-02-01 23:06:03,177 - INFO - Skipping metric column: Q_solar_total
+2026-02-01 23:06:03,177 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-01 23:06:03,177 - INFO - Skipping metric column: Mask_Target
+2026-02-01 23:06:03,177 - INFO - Reading file: results\task2_best_solution.csv
+2026-02-01 23:06:03,177 - INFO - Skipping metric column: WWR
+2026-02-01 23:06:03,177 - INFO - Column dN has reasonable range [0.07, 0.07], score +1
+2026-02-01 23:06:03,177 - INFO - Selected parameter dN with value 0.0655, score 1
+2026-02-01 23:06:03,177 - INFO - Column dE has reasonable range [0.48, 0.48], score +1
+2026-02-01 23:06:03,177 - INFO - Selected parameter dE with value 0.4815, score 1
+2026-02-01 23:06:03,177 - INFO - Column dS has reasonable range [1.00, 1.00], score +1
+2026-02-01 23:06:03,177 - INFO - Selected parameter dS with value 0.9990, score 1
+2026-02-01 23:06:03,177 - INFO - Column dW has reasonable range [0.11, 0.11], score +1
+2026-02-01 23:06:03,177 - INFO - Selected parameter dW with value 0.1063, score 1
+2026-02-01 23:06:03,177 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 23:06:03,177 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 23:06:03,178 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 23:06:03,178 - INFO - Reading file: results\task2_pareto_results.csv
+2026-02-01 23:06:03,178 - INFO - Skipping metric column: WWR
+2026-02-01 23:06:03,178 - INFO - Column dN has reasonable range [0.02, 0.89], score +1
+2026-02-01 23:06:03,178 - INFO - Selected parameter dN with value 0.0876, score 1
+2026-02-01 23:06:03,178 - INFO - Column dE has reasonable range [0.08, 0.76], score +1
+2026-02-01 23:06:03,178 - INFO - Selected parameter dE with value 0.4666, score 1
+2026-02-01 23:06:03,178 - INFO - Column dS has reasonable range [0.20, 1.00], score +1
+2026-02-01 23:06:03,178 - INFO - Selected parameter dS with value 0.4487, score 1
+2026-02-01 23:06:03,178 - INFO - Column dW has reasonable range [0.09, 0.99], score +1
+2026-02-01 23:06:03,178 - INFO - Selected parameter dW with value 0.9056, score 1
+2026-02-01 23:06:03,178 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 23:06:03,178 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 23:06:03,178 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 23:06:03,178 - INFO - Inferred parameters: {'dN': 0.087649919316101, 'dE': 0.4665980810684944, 'dS': 0.4487237929399081, 'dW': 0.905572997861415}
+2026-02-01 23:06:03,178 - INFO - Computing climate features
+2026-02-01 23:06:03,197 - INFO - Saved climate features and labels
+2026-02-01 23:06:03,197 - INFO - Preparing data for mapping
+2026-02-01 23:06:03,199 - INFO - Selected target parameters: ['dN', 'dE']
+2026-02-01 23:06:03,199 - INFO - Fitting mapping with method: rules
+2026-02-01 23:06:03,207 - INFO - Rules for dN:
+2026-02-01 23:06:03,207 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+2026-02-01 23:06:03,207 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+2026-02-01 23:06:03,207 - INFO -   ELSE dN=0.0876
+2026-02-01 23:06:03,207 - INFO - Rules for dE:
+2026-02-01 23:06:03,207 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+2026-02-01 23:06:03,207 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+2026-02-01 23:06:03,207 - INFO -   ELSE dE=0.4666
+2026-02-01 23:06:03,208 - INFO - Recommending templates
+2026-02-01 23:06:03,211 - INFO - Template for HKG: {'dN': 0.0876, 'dE': 0.4666, 'location': 'HKG'}
+2026-02-01 23:06:03,211 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  ELSE dN=0.0876
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  ELSE dE=0.4666
+2026-02-01 23:06:03,214 - INFO - Template for NOR: {'dN': 0.0876, 'dE': 0.4666, 'location': 'NOR'}
+2026-02-01 23:06:03,214 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  ELSE dN=0.0876
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  ELSE dE=0.4666
+2026-02-01 23:06:03,215 - INFO - Template for Riyadh: {'dN': 0.0876, 'dE': 0.4666, 'location': 'Riyadh'}
+2026-02-01 23:06:03,215 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  ELSE dN=0.0876
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  ELSE dE=0.4666
+2026-02-01 23:06:03,216 - INFO - Saved template parameters
+2026-02-01 23:06:03,216 - INFO - Evaluating solutions
+2026-02-01 23:06:03,238 - INFO - Evaluation for HKG: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'HKG'}
+2026-02-01 23:06:03,250 - INFO - Evaluation for NOR: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'NOR'}
+2026-02-01 23:06:03,261 - INFO - Evaluation for Riyadh: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'Riyadh'}
+2026-02-01 23:06:03,262 - INFO - Saved performance comparison
+2026-02-01 23:06:03,262 - INFO - Performing cross validation
+2026-02-01 23:06:03,263 - INFO - Saved cross validation errors
+2026-02-01 23:06:03,263 - INFO - Cross validation results: {'cv_err_loc': 0.0, 'cv_err_sce': 0.0, 'Err_ext': 0.0}
+2026-02-01 23:06:03,263 - INFO - Generating plots
+2026-02-01 23:06:03,777 - INFO - Generated CDD vs HDD scatter plot
+2026-02-01 23:06:04,236 - INFO - Generated feature bar plot
+2026-02-01 23:06:04,638 - INFO - Generated rules plot
+2026-02-01 23:06:05,264 - INFO - Generated performance comparison plot
+2026-02-01 23:06:05,867 - INFO - Generated Riyadh external validation plot
+2026-02-01 23:06:05,867 - INFO - Task 3 generalization completed successfully
+2026-02-01 23:13:34,566 - INFO - Starting Task 3 generalization
+2026-02-01 23:13:34,566 - INFO - Using mapping method: rules
+2026-02-01 23:13:34,566 - INFO - Seasons mode: 1
+2026-02-01 23:13:34,566 - INFO - Resolved training EPW: HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-01 23:13:34,566 - INFO - Resolved training EPW: NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-01 23:13:34,566 - INFO - Resolved external EPW: SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-01 23:13:34,566 - INFO - Reading EPW data
+2026-02-01 23:13:34,614 - INFO - Read EPW for HKG
+2026-02-01 23:13:34,658 - INFO - Read EPW for NOR
+2026-02-01 23:13:34,711 - INFO - Read external EPW for Riyadh
+2026-02-01 23:13:34,711 - INFO - Inferring parameters from results
+2026-02-01 23:13:34,725 - INFO - Reading file: results\task1_hourly_best.csv
+2026-02-01 23:13:34,725 - INFO - Skipping metric column: Q_solar_total
+2026-02-01 23:13:34,725 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-01 23:13:34,725 - INFO - Skipping metric column: Mask_Target
+2026-02-01 23:13:34,726 - INFO - Reading file: results\task2_best_solution.csv
+2026-02-01 23:13:34,726 - INFO - Skipping metric column: WWR
+2026-02-01 23:13:34,726 - INFO - Column dN has reasonable range [0.07, 0.07], score +1
+2026-02-01 23:13:34,726 - INFO - Selected parameter dN with value 0.0655, score 1
+2026-02-01 23:13:34,726 - INFO - Column dE has reasonable range [0.48, 0.48], score +1
+2026-02-01 23:13:34,726 - INFO - Selected parameter dE with value 0.4815, score 1
+2026-02-01 23:13:34,726 - INFO - Column dS has reasonable range [1.00, 1.00], score +1
+2026-02-01 23:13:34,726 - INFO - Selected parameter dS with value 0.9990, score 1
+2026-02-01 23:13:34,726 - INFO - Column dW has reasonable range [0.11, 0.11], score +1
+2026-02-01 23:13:34,726 - INFO - Selected parameter dW with value 0.1063, score 1
+2026-02-01 23:13:34,726 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 23:13:34,726 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 23:13:34,726 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 23:13:34,726 - INFO - Reading file: results\task2_pareto_results.csv
+2026-02-01 23:13:34,726 - INFO - Skipping metric column: WWR
+2026-02-01 23:13:34,726 - INFO - Column dN has reasonable range [0.02, 0.89], score +1
+2026-02-01 23:13:34,726 - INFO - Selected parameter dN with value 0.0876, score 1
+2026-02-01 23:13:34,726 - INFO - Column dE has reasonable range [0.08, 0.76], score +1
+2026-02-01 23:13:34,726 - INFO - Selected parameter dE with value 0.4666, score 1
+2026-02-01 23:13:34,726 - INFO - Column dS has reasonable range [0.20, 1.00], score +1
+2026-02-01 23:13:34,726 - INFO - Selected parameter dS with value 0.4487, score 1
+2026-02-01 23:13:34,726 - INFO - Column dW has reasonable range [0.09, 0.99], score +1
+2026-02-01 23:13:34,726 - INFO - Selected parameter dW with value 0.9056, score 1
+2026-02-01 23:13:34,726 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 23:13:34,726 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 23:13:34,726 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 23:13:34,726 - INFO - Inferred parameters: {'dN': 0.087649919316101, 'dE': 0.4665980810684944, 'dS': 0.4487237929399081, 'dW': 0.905572997861415}
+2026-02-01 23:13:34,726 - INFO - Computing climate features
+2026-02-01 23:13:34,742 - INFO - Saved climate features and labels
+2026-02-01 23:13:34,743 - INFO - Preparing data for mapping
+2026-02-01 23:13:34,743 - INFO - Selected target parameters: ['dN', 'dE']
+2026-02-01 23:13:34,744 - INFO - Fitting mapping with method: rules
+2026-02-01 23:13:34,748 - INFO - Rules for dN:
+2026-02-01 23:13:34,748 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+2026-02-01 23:13:34,748 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+2026-02-01 23:13:34,748 - INFO -   ELSE dN=0.0876
+2026-02-01 23:13:34,748 - INFO - Rules for dE:
+2026-02-01 23:13:34,748 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+2026-02-01 23:13:34,748 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+2026-02-01 23:13:34,748 - INFO -   ELSE dE=0.4666
+2026-02-01 23:13:34,748 - INFO - Recommending templates
+2026-02-01 23:13:34,751 - INFO - Template for HKG: {'dN': 0.0876, 'dE': 0.4666, 'location': 'HKG'}
+2026-02-01 23:13:34,751 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  ELSE dN=0.0876
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  ELSE dE=0.4666
+2026-02-01 23:13:34,754 - INFO - Template for NOR: {'dN': 0.0876, 'dE': 0.4666, 'location': 'NOR'}
+2026-02-01 23:13:34,754 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  ELSE dN=0.0876
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  ELSE dE=0.4666
+2026-02-01 23:13:34,755 - INFO - Template for Riyadh: {'dN': 0.0876, 'dE': 0.4666, 'location': 'Riyadh'}
+2026-02-01 23:13:34,755 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  ELSE dN=0.0876
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  ELSE dE=0.4666
+2026-02-01 23:13:34,756 - INFO - Saved template parameters
+2026-02-01 23:13:34,756 - INFO - Evaluating solutions
+2026-02-01 23:13:34,774 - INFO - Evaluation for HKG: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'HKG'}
+2026-02-01 23:13:34,785 - INFO - Evaluation for NOR: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'NOR'}
+2026-02-01 23:13:34,795 - INFO - Evaluation for Riyadh: {'baseline': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 0.0, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': 0, 'ASE': 0}, 'location': 'Riyadh'}
+2026-02-01 23:13:34,796 - INFO - Saved performance comparison
+2026-02-01 23:13:34,796 - INFO - Performing cross validation
+2026-02-01 23:13:34,797 - INFO - Saved cross validation errors
+2026-02-01 23:13:34,797 - INFO - Cross validation results: {'cv_err_loc': 0.0, 'cv_err_sce': 0.0, 'Err_ext': 0.0}
+2026-02-01 23:13:34,797 - INFO - Generating plots
+2026-02-01 23:13:35,228 - INFO - Generated CDD vs HDD scatter plot
+2026-02-01 23:13:35,569 - INFO - Generated feature bar plot
+2026-02-01 23:13:35,903 - INFO - Generated rules plot
+2026-02-01 23:13:36,418 - INFO - Generated performance comparison plot
+2026-02-01 23:13:37,087 - INFO - Generated Riyadh external validation plot
+2026-02-01 23:13:37,087 - INFO - Task 3 generalization completed successfully
+2026-02-01 23:39:30,030 - INFO - Starting Task 3 generalization
+2026-02-01 23:39:30,030 - INFO - Using mapping method: rules
+2026-02-01 23:39:30,030 - INFO - Seasons mode: 1
+2026-02-01 23:39:30,030 - INFO - Resolved training EPW: HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-01 23:39:30,030 - INFO - Resolved training EPW: NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-01 23:39:30,031 - INFO - Resolved external EPW: SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-01 23:39:30,031 - INFO - Reading EPW data
+2026-02-01 23:39:30,078 - INFO - Read EPW for HKG
+2026-02-01 23:39:30,123 - INFO - Read EPW for NOR
+2026-02-01 23:39:30,166 - INFO - Read external EPW for Riyadh
+2026-02-01 23:39:30,167 - INFO - Inferring parameters from results
+2026-02-01 23:39:30,183 - INFO - Reading file: results\task1_hourly_best.csv
+2026-02-01 23:39:30,183 - INFO - Skipping metric column: Q_solar_total
+2026-02-01 23:39:30,183 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-01 23:39:30,183 - INFO - Skipping metric column: Mask_Target
+2026-02-01 23:39:30,183 - INFO - Reading file: results\task2_best_solution.csv
+2026-02-01 23:39:30,183 - INFO - Skipping metric column: WWR
+2026-02-01 23:39:30,183 - INFO - Column dN has reasonable range [0.07, 0.07], score +1
+2026-02-01 23:39:30,183 - INFO - Selected parameter dN with value 0.0655, score 1
+2026-02-01 23:39:30,183 - INFO - Column dE has reasonable range [0.48, 0.48], score +1
+2026-02-01 23:39:30,183 - INFO - Selected parameter dE with value 0.4815, score 1
+2026-02-01 23:39:30,183 - INFO - Column dS has reasonable range [1.00, 1.00], score +1
+2026-02-01 23:39:30,183 - INFO - Selected parameter dS with value 0.9990, score 1
+2026-02-01 23:39:30,183 - INFO - Column dW has reasonable range [0.11, 0.11], score +1
+2026-02-01 23:39:30,183 - INFO - Selected parameter dW with value 0.1063, score 1
+2026-02-01 23:39:30,183 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 23:39:30,183 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 23:39:30,183 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 23:39:30,183 - INFO - Reading file: results\task2_pareto_results.csv
+2026-02-01 23:39:30,183 - INFO - Skipping metric column: WWR
+2026-02-01 23:39:30,183 - INFO - Column dN has reasonable range [0.02, 0.89], score +1
+2026-02-01 23:39:30,183 - INFO - Selected parameter dN with value 0.0876, score 1
+2026-02-01 23:39:30,183 - INFO - Column dE has reasonable range [0.08, 0.76], score +1
+2026-02-01 23:39:30,183 - INFO - Selected parameter dE with value 0.4666, score 1
+2026-02-01 23:39:30,184 - INFO - Column dS has reasonable range [0.20, 1.00], score +1
+2026-02-01 23:39:30,184 - INFO - Selected parameter dS with value 0.4487, score 1
+2026-02-01 23:39:30,184 - INFO - Column dW has reasonable range [0.09, 0.99], score +1
+2026-02-01 23:39:30,184 - INFO - Selected parameter dW with value 0.9056, score 1
+2026-02-01 23:39:30,184 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 23:39:30,184 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 23:39:30,184 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 23:39:30,184 - INFO - Inferred parameters: {'dN': 0.087649919316101, 'dE': 0.4665980810684944, 'dS': 0.4487237929399081, 'dW': 0.905572997861415}
+2026-02-01 23:39:30,184 - INFO - Computing climate features
+2026-02-01 23:39:30,200 - INFO - Saved climate features and labels
+2026-02-01 23:39:30,200 - INFO - Preparing data for mapping
+2026-02-01 23:39:30,201 - INFO - Selected target parameters: ['dN', 'dE', 'dS', 'dW']
+2026-02-01 23:39:30,202 - INFO - Fitting mapping with method: rules
+2026-02-01 23:39:30,213 - INFO - Rules for dN:
+2026-02-01 23:39:30,213 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+2026-02-01 23:39:30,213 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+2026-02-01 23:39:30,213 - INFO -   ELSE dN=0.0876
+2026-02-01 23:39:30,213 - INFO - Rules for dE:
+2026-02-01 23:39:30,213 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+2026-02-01 23:39:30,213 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+2026-02-01 23:39:30,213 - INFO -   ELSE dE=0.4666
+2026-02-01 23:39:30,213 - INFO - Rules for dS:
+2026-02-01 23:39:30,213 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+2026-02-01 23:39:30,213 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+2026-02-01 23:39:30,213 - INFO -   ELSE dS=0.4487
+2026-02-01 23:39:30,213 - INFO - Rules for dW:
+2026-02-01 23:39:30,213 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+2026-02-01 23:39:30,213 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+2026-02-01 23:39:30,213 - INFO -   ELSE dW=0.9056
+2026-02-01 23:39:30,213 - INFO - Recommending templates
+2026-02-01 23:39:30,216 - INFO - Template for HKG: {'dN': 0.087649919316101, 'dE': 0.4665980810684944, 'dS': 0.4487237929399081, 'dW': 0.905572997861415, 'location': 'HKG'}
+2026-02-01 23:39:30,216 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  ELSE dN=0.0876
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  ELSE dE=0.4666
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+  ELSE dS=0.4487
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+  ELSE dW=0.9056
+2026-02-01 23:39:30,219 - INFO - Template for NOR: {'dN': 0.087649919316101, 'dE': 0.4665980810684943, 'dS': 0.44872379293990805, 'dW': 0.9055729978614149, 'location': 'NOR'}
+2026-02-01 23:39:30,219 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  ELSE dN=0.0876
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  ELSE dE=0.4666
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+  ELSE dS=0.4487
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+  ELSE dW=0.9056
+2026-02-01 23:39:30,220 - INFO - Template for Riyadh: {'dN': 0.087649919316101, 'dE': 0.4665980810684944, 'dS': 0.4487237929399081, 'dW': 0.905572997861415, 'location': 'Riyadh'}
+2026-02-01 23:39:30,220 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  ELSE dN=0.0876
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  ELSE dE=0.4666
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+  ELSE dS=0.4487
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+  ELSE dW=0.9056
+2026-02-01 23:39:30,221 - INFO - Saved template parameters
+2026-02-01 23:39:30,221 - INFO - Evaluating solutions
+2026-02-01 23:39:30,720 - INFO - Evaluation for HKG: {'baseline': {'E_cool': 0.0, 'E_heat': np.float64(23481.500992185935), 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': np.float64(23481.500992185935), 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': np.float64(23481.500992185935), 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': np.float64(0.0), 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': np.float64(0.0), 'ASE': 0}, 'location': 'HKG'}
+2026-02-01 23:39:30,765 - INFO - Evaluation for NOR: {'baseline': {'E_cool': 0.0, 'E_heat': 415036.6752607012, 'ASE': -81834194.34259859, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 404710.806937768, 'ASE': -104527954.4396424, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 404710.806937768, 'ASE': -104527954.4396424, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': -0.02487941172053558, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': -0.02487941172053558, 'ASE': 0}, 'location': 'NOR'}
+2026-02-01 23:39:31,202 - INFO - Evaluation for Riyadh: {'baseline': {'E_cool': 0.0, 'E_heat': np.float64(31347.612603711077), 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': np.float64(31347.612603711077), 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': np.float64(31347.612603711077), 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': np.float64(0.0), 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': np.float64(0.0), 'ASE': 0}, 'location': 'Riyadh'}
+2026-02-01 23:39:31,203 - INFO - Saved performance comparison
+2026-02-01 23:39:31,203 - INFO - Performing cross validation
+2026-02-01 23:39:31,204 - INFO - Saved cross validation errors
+2026-02-01 23:39:31,204 - INFO - Cross validation results: {'cv_err_loc': 0.0, 'cv_err_sce': 0.0, 'Err_ext': 0.0}
+2026-02-01 23:39:31,204 - INFO - Generating plots
+2026-02-01 23:39:31,635 - INFO - Generated CDD vs HDD scatter plot
+2026-02-01 23:39:31,985 - INFO - Generated feature bar plot
+2026-02-01 23:39:32,374 - INFO - Generated rules plot
+2026-02-01 23:39:32,990 - INFO - Generated performance comparison plot
+2026-02-01 23:39:33,623 - INFO - Generated Riyadh external validation plot
+2026-02-01 23:39:33,623 - INFO - Task 3 generalization completed successfully
+2026-02-01 23:43:04,804 - INFO - Starting Task 3 generalization
+2026-02-01 23:43:04,804 - INFO - Using mapping method: rules
+2026-02-01 23:43:04,804 - INFO - Seasons mode: 1
+2026-02-01 23:43:04,804 - INFO - Resolved training EPW: HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-01 23:43:04,804 - INFO - Resolved training EPW: NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-01 23:43:04,804 - INFO - Resolved external EPW: SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-01 23:43:04,804 - INFO - Reading EPW data
+2026-02-01 23:43:04,853 - INFO - Read EPW for HKG
+2026-02-01 23:43:04,898 - INFO - Read EPW for NOR
+2026-02-01 23:43:04,939 - INFO - Read external EPW for Riyadh
+2026-02-01 23:43:04,939 - INFO - Inferring parameters from results
+2026-02-01 23:43:04,952 - INFO - Reading file: results\task1_hourly_best.csv
+2026-02-01 23:43:04,952 - INFO - Skipping metric column: Q_solar_total
+2026-02-01 23:43:04,952 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-01 23:43:04,952 - INFO - Skipping metric column: Mask_Target
+2026-02-01 23:43:04,952 - INFO - Reading file: results\task2_best_solution.csv
+2026-02-01 23:43:04,952 - INFO - Skipping metric column: WWR
+2026-02-01 23:43:04,952 - INFO - Column dN has reasonable range [0.07, 0.07], score +1
+2026-02-01 23:43:04,952 - INFO - Selected parameter dN with value 0.0655, score 1
+2026-02-01 23:43:04,952 - INFO - Column dE has reasonable range [0.48, 0.48], score +1
+2026-02-01 23:43:04,952 - INFO - Selected parameter dE with value 0.4815, score 1
+2026-02-01 23:43:04,953 - INFO - Column dS has reasonable range [1.00, 1.00], score +1
+2026-02-01 23:43:04,953 - INFO - Selected parameter dS with value 0.9990, score 1
+2026-02-01 23:43:04,953 - INFO - Column dW has reasonable range [0.11, 0.11], score +1
+2026-02-01 23:43:04,953 - INFO - Selected parameter dW with value 0.1063, score 1
+2026-02-01 23:43:04,953 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 23:43:04,953 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 23:43:04,953 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 23:43:04,953 - INFO - Reading file: results\task2_pareto_results.csv
+2026-02-01 23:43:04,953 - INFO - Skipping metric column: WWR
+2026-02-01 23:43:04,953 - INFO - Column dN has reasonable range [0.02, 0.89], score +1
+2026-02-01 23:43:04,953 - INFO - Selected parameter dN with value 0.0876, score 1
+2026-02-01 23:43:04,953 - INFO - Column dE has reasonable range [0.08, 0.76], score +1
+2026-02-01 23:43:04,953 - INFO - Selected parameter dE with value 0.4666, score 1
+2026-02-01 23:43:04,953 - INFO - Column dS has reasonable range [0.20, 1.00], score +1
+2026-02-01 23:43:04,953 - INFO - Selected parameter dS with value 0.4487, score 1
+2026-02-01 23:43:04,953 - INFO - Column dW has reasonable range [0.09, 0.99], score +1
+2026-02-01 23:43:04,953 - INFO - Selected parameter dW with value 0.9056, score 1
+2026-02-01 23:43:04,953 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 23:43:04,953 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 23:43:04,953 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 23:43:04,953 - INFO - Inferred parameters: {'dN': 0.087649919316101, 'dE': 0.4665980810684944, 'dS': 0.4487237929399081, 'dW': 0.905572997861415}
+2026-02-01 23:43:04,953 - INFO - Computing climate features
+2026-02-01 23:43:04,970 - INFO - Saved climate features and labels
+2026-02-01 23:43:04,970 - INFO - Preparing data for mapping
+2026-02-01 23:43:04,971 - INFO - Selected target parameters: ['dN', 'dE', 'dS', 'dW']
+2026-02-01 23:43:04,971 - INFO - Fitting mapping with method: rules
+2026-02-01 23:43:04,980 - INFO - Rules for dN:
+2026-02-01 23:43:04,980 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+2026-02-01 23:43:04,980 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+2026-02-01 23:43:04,980 - INFO -   ELSE dN=0.0876
+2026-02-01 23:43:04,980 - INFO - Rules for dE:
+2026-02-01 23:43:04,980 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+2026-02-01 23:43:04,980 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+2026-02-01 23:43:04,980 - INFO -   ELSE dE=0.4666
+2026-02-01 23:43:04,980 - INFO - Rules for dS:
+2026-02-01 23:43:04,980 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+2026-02-01 23:43:04,980 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+2026-02-01 23:43:04,980 - INFO -   ELSE dS=0.4487
+2026-02-01 23:43:04,980 - INFO - Rules for dW:
+2026-02-01 23:43:04,980 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+2026-02-01 23:43:04,980 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+2026-02-01 23:43:04,980 - INFO -   ELSE dW=0.9056
+2026-02-01 23:43:04,980 - INFO - Recommending templates
+2026-02-01 23:43:04,983 - INFO - Template for HKG: {'dN': 0.087649919316101, 'dE': 0.4665980810684944, 'dS': 0.4487237929399081, 'dW': 0.905572997861415, 'location': 'HKG'}
+2026-02-01 23:43:04,983 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  ELSE dN=0.0876
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  ELSE dE=0.4666
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+  ELSE dS=0.4487
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+  ELSE dW=0.9056
+2026-02-01 23:43:04,986 - INFO - Template for NOR: {'dN': 0.087649919316101, 'dE': 0.4665980810684943, 'dS': 0.44872379293990805, 'dW': 0.9055729978614149, 'location': 'NOR'}
+2026-02-01 23:43:04,986 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  ELSE dN=0.0876
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  ELSE dE=0.4666
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+  ELSE dS=0.4487
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+  ELSE dW=0.9056
+2026-02-01 23:43:04,987 - INFO - Template for Riyadh: {'dN': 0.087649919316101, 'dE': 0.4665980810684944, 'dS': 0.4487237929399081, 'dW': 0.905572997861415, 'location': 'Riyadh'}
+2026-02-01 23:43:04,987 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  ELSE dN=0.0876
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  ELSE dE=0.4666
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+  ELSE dS=0.4487
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+  ELSE dW=0.9056
+2026-02-01 23:43:04,988 - INFO - Saved template parameters
+2026-02-01 23:43:04,988 - INFO - Evaluating solutions
+2026-02-01 23:43:05,023 - INFO - Evaluation for HKG: {'baseline': {'E_cool': 261643.39000462493, 'E_heat': 0.0, 'ASE': 3420.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 192641.74474790526, 'E_heat': 0.0, 'ASE': 3376.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 192641.74474790526, 'E_heat': 0.0, 'ASE': 3376.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': -0.2637240147954816, 'E_heat': 0, 'ASE': -0.012865497076023392}, 'optimized_vs_baseline': {'E_cool': -0.2637240147954816, 'E_heat': 0, 'ASE': -0.012865497076023392}, 'location': 'HKG'}
+2026-02-01 23:43:05,070 - INFO - Evaluation for NOR: {'baseline': {'E_cool': 0.0, 'E_heat': 415036.6752607012, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 404710.806937768, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 404710.806937768, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': -0.02487941172053558, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': -0.02487941172053558, 'ASE': 0}, 'location': 'NOR'}
+2026-02-01 23:43:05,709 - INFO - Evaluation for Riyadh: {'baseline': {'E_cool': np.float64(815626.3365320868), 'E_heat': np.float64(31347.612603711077), 'ASE': np.float64(10661.236543718645), 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': np.float64(815626.3365320868), 'E_heat': np.float64(31347.612603711077), 'ASE': np.float64(10661.236543718645), 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': np.float64(815626.3365320868), 'E_heat': np.float64(31347.612603711077), 'ASE': np.float64(10661.236543718645), 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': np.float64(0.0), 'E_heat': np.float64(0.0), 'ASE': np.float64(0.0)}, 'optimized_vs_baseline': {'E_cool': np.float64(0.0), 'E_heat': np.float64(0.0), 'ASE': np.float64(0.0)}, 'location': 'Riyadh'}
+2026-02-01 23:43:05,710 - INFO - Saved performance comparison
+2026-02-01 23:43:05,710 - INFO - Performing cross validation
+2026-02-01 23:43:05,711 - INFO - Saved cross validation errors
+2026-02-01 23:43:05,711 - INFO - Cross validation results: {'cv_err_loc': 0.0, 'cv_err_sce': 0.0, 'Err_ext': 0.0}
+2026-02-01 23:43:05,711 - INFO - Generating plots
+2026-02-01 23:43:06,195 - INFO - Generated CDD vs HDD scatter plot
+2026-02-01 23:43:06,554 - INFO - Generated feature bar plot
+2026-02-01 23:43:06,931 - INFO - Generated rules plot
+2026-02-01 23:43:07,500 - INFO - Generated performance comparison plot
+2026-02-01 23:43:08,015 - INFO - Generated Riyadh external validation plot
+2026-02-01 23:43:08,015 - INFO - Task 3 generalization completed successfully
+2026-02-01 23:45:53,937 - INFO - Starting Task 3 generalization
+2026-02-01 23:45:53,937 - INFO - Using mapping method: rules
+2026-02-01 23:45:53,937 - INFO - Seasons mode: 1
+2026-02-01 23:45:53,937 - INFO - Resolved training EPW: HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-01 23:45:53,937 - INFO - Resolved training EPW: NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-01 23:45:53,937 - INFO - Resolved external EPW: SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-01 23:45:53,937 - INFO - Reading EPW data
+2026-02-01 23:45:53,986 - INFO - Read EPW for HKG
+2026-02-01 23:45:54,029 - INFO - Read EPW for NOR
+2026-02-01 23:45:54,072 - INFO - Read external EPW for Riyadh
+2026-02-01 23:45:54,072 - INFO - Inferring parameters from results
+2026-02-01 23:45:54,086 - INFO - Reading file: results\task1_hourly_best.csv
+2026-02-01 23:45:54,086 - INFO - Skipping metric column: Q_solar_total
+2026-02-01 23:45:54,086 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-01 23:45:54,086 - INFO - Skipping metric column: Mask_Target
+2026-02-01 23:45:54,086 - INFO - Reading file: results\task2_best_solution.csv
+2026-02-01 23:45:54,086 - INFO - Skipping metric column: WWR
+2026-02-01 23:45:54,086 - INFO - Column dN has reasonable range [0.07, 0.07], score +1
+2026-02-01 23:45:54,086 - INFO - Selected parameter dN with value 0.0655, score 1
+2026-02-01 23:45:54,087 - INFO - Column dE has reasonable range [0.48, 0.48], score +1
+2026-02-01 23:45:54,087 - INFO - Selected parameter dE with value 0.4815, score 1
+2026-02-01 23:45:54,087 - INFO - Column dS has reasonable range [1.00, 1.00], score +1
+2026-02-01 23:45:54,087 - INFO - Selected parameter dS with value 0.9990, score 1
+2026-02-01 23:45:54,087 - INFO - Column dW has reasonable range [0.11, 0.11], score +1
+2026-02-01 23:45:54,087 - INFO - Selected parameter dW with value 0.1063, score 1
+2026-02-01 23:45:54,087 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 23:45:54,087 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 23:45:54,087 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 23:45:54,087 - INFO - Reading file: results\task2_pareto_results.csv
+2026-02-01 23:45:54,087 - INFO - Skipping metric column: WWR
+2026-02-01 23:45:54,087 - INFO - Column dN has reasonable range [0.02, 0.89], score +1
+2026-02-01 23:45:54,087 - INFO - Selected parameter dN with value 0.0876, score 1
+2026-02-01 23:45:54,087 - INFO - Column dE has reasonable range [0.08, 0.76], score +1
+2026-02-01 23:45:54,087 - INFO - Selected parameter dE with value 0.4666, score 1
+2026-02-01 23:45:54,087 - INFO - Column dS has reasonable range [0.20, 1.00], score +1
+2026-02-01 23:45:54,087 - INFO - Selected parameter dS with value 0.4487, score 1
+2026-02-01 23:45:54,087 - INFO - Column dW has reasonable range [0.09, 0.99], score +1
+2026-02-01 23:45:54,087 - INFO - Selected parameter dW with value 0.9056, score 1
+2026-02-01 23:45:54,087 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-01 23:45:54,088 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-01 23:45:54,088 - INFO - Skipping metric column: ASE_Hours
+2026-02-01 23:45:54,088 - INFO - Inferred parameters: {'dN': 0.087649919316101, 'dE': 0.4665980810684944, 'dS': 0.4487237929399081, 'dW': 0.905572997861415}
+2026-02-01 23:45:54,088 - INFO - Computing climate features
+2026-02-01 23:45:54,105 - INFO - Saved climate features and labels
+2026-02-01 23:45:54,105 - INFO - Preparing data for mapping
+2026-02-01 23:45:54,106 - INFO - Selected target parameters: ['dN', 'dE', 'dS', 'dW']
+2026-02-01 23:45:54,106 - INFO - Fitting mapping with method: rules
+2026-02-01 23:45:54,114 - INFO - Rules for dN:
+2026-02-01 23:45:54,114 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+2026-02-01 23:45:54,114 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+2026-02-01 23:45:54,114 - INFO -   ELSE dN=0.0876
+2026-02-01 23:45:54,114 - INFO - Rules for dE:
+2026-02-01 23:45:54,114 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+2026-02-01 23:45:54,114 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+2026-02-01 23:45:54,114 - INFO -   ELSE dE=0.4666
+2026-02-01 23:45:54,114 - INFO - Rules for dS:
+2026-02-01 23:45:54,115 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+2026-02-01 23:45:54,115 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+2026-02-01 23:45:54,115 - INFO -   ELSE dS=0.4487
+2026-02-01 23:45:54,115 - INFO - Rules for dW:
+2026-02-01 23:45:54,115 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+2026-02-01 23:45:54,115 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+2026-02-01 23:45:54,115 - INFO -   ELSE dW=0.9056
+2026-02-01 23:45:54,115 - INFO - Recommending templates
+2026-02-01 23:45:54,118 - INFO - Template for HKG: {'dN': 0.087649919316101, 'dE': 0.4665980810684944, 'dS': 0.4487237929399081, 'dW': 0.905572997861415, 'location': 'HKG'}
+2026-02-01 23:45:54,118 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  ELSE dN=0.0876
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  ELSE dE=0.4666
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+  ELSE dS=0.4487
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+  ELSE dW=0.9056
+2026-02-01 23:45:54,121 - INFO - Template for NOR: {'dN': 0.087649919316101, 'dE': 0.4665980810684943, 'dS': 0.44872379293990805, 'dW': 0.9055729978614149, 'location': 'NOR'}
+2026-02-01 23:45:54,121 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  ELSE dN=0.0876
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  ELSE dE=0.4666
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+  ELSE dS=0.4487
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+  ELSE dW=0.9056
+2026-02-01 23:45:54,122 - INFO - Template for Riyadh: {'dN': 0.087649919316101, 'dE': 0.4665980810684944, 'dS': 0.4487237929399081, 'dW': 0.905572997861415, 'location': 'Riyadh'}
+2026-02-01 23:45:54,122 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0876
+  ELSE dN=0.0876
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.4666
+  ELSE dE=0.4666
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.4487
+  ELSE dS=0.4487
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.9056
+  ELSE dW=0.9056
+2026-02-01 23:45:54,123 - INFO - Saved template parameters
+2026-02-01 23:45:54,123 - INFO - Evaluating solutions
+2026-02-01 23:45:54,160 - INFO - Evaluation for HKG: {'baseline': {'E_cool': 261643.39000462493, 'E_heat': 0.0, 'ASE': 3420.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 192641.74474790526, 'E_heat': 0.0, 'ASE': 3376.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 192641.74474790526, 'E_heat': 0.0, 'ASE': 3376.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': -0.2637240147954816, 'E_heat': 0, 'ASE': -0.012865497076023392}, 'optimized_vs_baseline': {'E_cool': -0.2637240147954816, 'E_heat': 0, 'ASE': -0.012865497076023392}, 'location': 'HKG'}
+2026-02-01 23:45:54,202 - INFO - Evaluation for NOR: {'baseline': {'E_cool': 0.0, 'E_heat': 415036.6752607012, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 404710.806937768, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 404710.806937768, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': -0.02487941172053558, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': -0.02487941172053558, 'ASE': 0}, 'location': 'NOR'}
+2026-02-01 23:45:54,854 - INFO - Evaluation for Riyadh: {'baseline': {'E_cool': np.float64(815626.3365320868), 'E_heat': np.float64(31347.612603711077), 'ASE': np.float64(10661.236543718645), 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': np.float64(600526.0844889142), 'E_heat': np.float64(30567.702443287497), 'ASE': np.float64(10524.074436138639), 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': np.float64(600526.0844889142), 'E_heat': np.float64(30567.702443287497), 'ASE': np.float64(10524.074436138639), 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': np.float64(-0.2637240147954817), 'E_heat': np.float64(-0.024879411720535642), 'ASE': np.float64(-0.012865497076023462)}, 'optimized_vs_baseline': {'E_cool': np.float64(-0.2637240147954817), 'E_heat': np.float64(-0.024879411720535642), 'ASE': np.float64(-0.012865497076023462)}, 'location': 'Riyadh'}
+2026-02-01 23:45:54,855 - INFO - Saved performance comparison
+2026-02-01 23:45:54,856 - INFO - Performing cross validation
+2026-02-01 23:45:54,857 - INFO - Saved cross validation errors
+2026-02-01 23:45:54,857 - INFO - Cross validation results: {'cv_err_loc': 0.0, 'cv_err_sce': 0.0, 'Err_ext': 0.0}
+2026-02-01 23:45:54,857 - INFO - Generating plots
+2026-02-01 23:45:55,286 - INFO - Generated CDD vs HDD scatter plot
+2026-02-01 23:45:55,642 - INFO - Generated feature bar plot
+2026-02-01 23:45:56,006 - INFO - Generated rules plot
+2026-02-01 23:45:56,557 - INFO - Generated performance comparison plot
+2026-02-01 23:45:56,889 - INFO - Generated Riyadh external validation plot
+2026-02-01 23:45:56,890 - INFO - Task 3 generalization completed successfully
+2026-02-02 00:20:04,696 - INFO - Starting Task 3 generalization
+2026-02-02 00:20:04,696 - INFO - Using mapping method: rules
+2026-02-02 00:20:04,696 - INFO - Seasons mode: 1
+2026-02-02 00:20:04,696 - INFO - Resolved training EPW: HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-02 00:20:04,696 - INFO - Resolved training EPW: NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-02 00:20:04,696 - INFO - Resolved external EPW: SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-02 00:20:04,697 - INFO - Reading EPW data
+2026-02-02 00:20:04,742 - INFO - Read EPW for HKG
+2026-02-02 00:20:04,784 - INFO - Read EPW for NOR
+2026-02-02 00:20:04,823 - INFO - Read external EPW for Riyadh
+2026-02-02 00:20:04,823 - INFO - Inferring parameters from results
+2026-02-02 00:20:04,835 - INFO - Reading file: results\task1_hourly_best.csv
+2026-02-02 00:20:04,835 - INFO - Skipping metric column: Q_solar_total
+2026-02-02 00:20:04,835 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-02 00:20:04,835 - INFO - Skipping metric column: Mask_Target
+2026-02-02 00:20:04,835 - INFO - Reading file: results\task2_best_solution.csv
+2026-02-02 00:20:04,835 - INFO - Skipping metric column: WWR
+2026-02-02 00:20:04,835 - INFO - Column dN has reasonable range [0.07, 0.07], score +1
+2026-02-02 00:20:04,835 - INFO - Selected parameter dN with value 0.0749, score 1
+2026-02-02 00:20:04,835 - INFO - Column dE has reasonable range [0.15, 0.15], score +1
+2026-02-02 00:20:04,835 - INFO - Selected parameter dE with value 0.1533, score 1
+2026-02-02 00:20:04,835 - INFO - Column dS has reasonable range [1.00, 1.00], score +1
+2026-02-02 00:20:04,835 - INFO - Selected parameter dS with value 0.9993, score 1
+2026-02-02 00:20:04,835 - INFO - Column dW has reasonable range [0.00, 0.00], score +1
+2026-02-02 00:20:04,835 - INFO - Selected parameter dW with value 0.0021, score 1
+2026-02-02 00:20:04,835 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-02 00:20:04,836 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-02 00:20:04,836 - INFO - Skipping metric column: ASE_Hours
+2026-02-02 00:20:04,836 - INFO - Reading file: results\task2_pareto_results.csv
+2026-02-02 00:20:04,836 - INFO - Skipping metric column: WWR
+2026-02-02 00:20:04,836 - INFO - Column dN has reasonable range [0.00, 0.18], score +1
+2026-02-02 00:20:04,836 - INFO - Selected parameter dN with value 0.0291, score 1
+2026-02-02 00:20:04,836 - INFO - Column dE has reasonable range [0.01, 0.80], score +1
+2026-02-02 00:20:04,836 - INFO - Selected parameter dE with value 0.0851, score 1
+2026-02-02 00:20:04,836 - INFO - Column dS has reasonable range [0.01, 1.00], score +1
+2026-02-02 00:20:04,836 - INFO - Selected parameter dS with value 0.9349, score 1
+2026-02-02 00:20:04,836 - INFO - Column dW has reasonable range [0.00, 1.00], score +1
+2026-02-02 00:20:04,836 - INFO - Selected parameter dW with value 0.1469, score 1
+2026-02-02 00:20:04,836 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-02 00:20:04,836 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-02 00:20:04,836 - INFO - Skipping metric column: ASE_Hours
+2026-02-02 00:20:04,836 - INFO - Inferred parameters: {'dN': 0.0290820330888168, 'dE': 0.0850574824479785, 'dS': 0.9349230773063588, 'dW': 0.1469103216417185}
+2026-02-02 00:20:04,836 - INFO - Computing climate features
+2026-02-02 00:20:04,850 - INFO - Saved climate features and labels
+2026-02-02 00:20:04,850 - INFO - Preparing data for mapping
+2026-02-02 00:20:04,851 - INFO - Selected target parameters: ['dN', 'dE', 'dS', 'dW']
+2026-02-02 00:20:04,851 - INFO - Fitting mapping with method: rules
+2026-02-02 00:20:04,861 - INFO - Rules for dN:
+2026-02-02 00:20:04,861 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0291
+2026-02-02 00:20:04,861 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0291
+2026-02-02 00:20:04,861 - INFO -   ELSE dN=0.0291
+2026-02-02 00:20:04,861 - INFO - Rules for dE:
+2026-02-02 00:20:04,861 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.0851
+2026-02-02 00:20:04,861 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.0851
+2026-02-02 00:20:04,861 - INFO -   ELSE dE=0.0851
+2026-02-02 00:20:04,861 - INFO - Rules for dS:
+2026-02-02 00:20:04,861 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.9349
+2026-02-02 00:20:04,861 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.9349
+2026-02-02 00:20:04,861 - INFO -   ELSE dS=0.9349
+2026-02-02 00:20:04,861 - INFO - Rules for dW:
+2026-02-02 00:20:04,862 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.1469
+2026-02-02 00:20:04,862 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.1469
+2026-02-02 00:20:04,862 - INFO -   ELSE dW=0.1469
+2026-02-02 00:20:04,862 - INFO - Recommending templates
+2026-02-02 00:20:04,865 - INFO - Template for HKG: {'dN': 0.029082033088816805, 'dE': 0.0850574824479785, 'dS': 0.9349230773063587, 'dW': 0.1469103216417185, 'location': 'HKG'}
+2026-02-02 00:20:04,865 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0291
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0291
+  ELSE dN=0.0291
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.0851
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.0851
+  ELSE dE=0.0851
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.9349
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.9349
+  ELSE dS=0.9349
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.1469
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.1469
+  ELSE dW=0.1469
+2026-02-02 00:20:04,868 - INFO - Template for NOR: {'dN': 0.0290820330888168, 'dE': 0.0850574824479785, 'dS': 0.9349230773063588, 'dW': 0.1469103216417185, 'location': 'NOR'}
+2026-02-02 00:20:04,868 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0291
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0291
+  ELSE dN=0.0291
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.0851
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.0851
+  ELSE dE=0.0851
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.9349
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.9349
+  ELSE dS=0.9349
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.1469
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.1469
+  ELSE dW=0.1469
+2026-02-02 00:20:04,869 - INFO - Template for Riyadh: {'dN': 0.0290820330888168, 'dE': 0.0850574824479785, 'dS': 0.9349230773063588, 'dW': 0.1469103216417185, 'location': 'Riyadh'}
+2026-02-02 00:20:04,869 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0291
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0291
+  ELSE dN=0.0291
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.0851
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.0851
+  ELSE dE=0.0851
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.9349
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.9349
+  ELSE dS=0.9349
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.1469
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.1469
+  ELSE dW=0.1469
+2026-02-02 00:20:04,871 - INFO - Saved template parameters
+2026-02-02 00:20:04,871 - INFO - Evaluating solutions
+2026-02-02 00:20:04,906 - INFO - Evaluation for HKG: {'baseline': {'E_cool': 261643.39000462493, 'E_heat': 0.0, 'ASE': 3420.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 225995.16573742536, 'E_heat': 0.0, 'ASE': 3355.3054054992385, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 164112.27872731324, 'E_heat': 0.0, 'ASE': 3243.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': -0.13624737191552763, 'E_heat': 0, 'ASE': -0.018916548099637855}, 'optimized_vs_baseline': {'E_cool': -0.37276352089608566, 'E_heat': 0, 'ASE': -0.05175438596491228}, 'location': 'HKG'}
+2026-02-02 00:20:04,947 - INFO - Evaluation for NOR: {'baseline': {'E_cool': 0.0, 'E_heat': 415036.6752607012, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 404992.46087330766, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 404710.806937768, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': -0.024200787511331093, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': -0.02487941172053558, 'ASE': 0}, 'location': 'NOR'}
+2026-02-02 00:20:05,577 - INFO - Evaluation for Riyadh: {'baseline': {'E_cool': np.float64(815626.3365320868), 'E_heat': np.float64(31347.612603711077), 'ASE': np.float64(10661.236543718645), 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': np.float64(704499.3917145004), 'E_heat': np.float64(31062.5506174081), 'ASE': np.float64(10459.562749837774), 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': np.float64(511590.5915908105), 'E_heat': np.float64(30567.702443287497), 'ASE': np.float64(10109.470792771803), 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': np.float64(-0.13624737191552752), 'E_heat': np.float64(-0.00909357882868668), 'ASE': np.float64(-0.018916548099637893)}, 'optimized_vs_baseline': {'E_cool': np.float64(-0.3727635208960856), 'E_heat': np.float64(-0.024879411720535642), 'ASE': np.float64(-0.05175438596491233)}, 'location': 'Riyadh'}
+2026-02-02 00:20:05,579 - INFO - Saved performance comparison
+2026-02-02 00:20:05,579 - INFO - Performing cross validation
+2026-02-02 00:20:05,580 - INFO - Saved cross validation errors
+2026-02-02 00:20:05,580 - INFO - Cross validation results: {'cv_err_loc': 0.0, 'cv_err_sce': 0.0, 'Err_ext': 0.0}
+2026-02-02 00:20:05,580 - INFO - Generating plots
+2026-02-02 00:20:05,993 - INFO - Generated CDD vs HDD scatter plot
+2026-02-02 00:20:06,335 - INFO - Generated feature bar plot
+2026-02-02 00:20:06,688 - INFO - Generated rules plot
+2026-02-02 00:20:07,217 - INFO - Generated performance comparison plot
+2026-02-02 00:20:07,519 - INFO - Generated Riyadh external validation plot
+2026-02-02 00:20:07,519 - INFO - Task 3 generalization completed successfully
+2026-02-02 00:47:29,459 - INFO - Starting Task 3 generalization
+2026-02-02 00:47:29,460 - INFO - Using mapping method: rules
+2026-02-02 00:47:29,460 - INFO - Seasons mode: 1
+2026-02-02 00:47:29,460 - INFO - Resolved training EPW: data\epw\HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-02 00:47:29,460 - INFO - Resolved training EPW: data\epw\NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-02 00:47:29,460 - INFO - Resolved external EPW: data\epw\SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-02 00:47:29,460 - INFO - Reading EPW data
+2026-02-02 00:47:29,506 - INFO - Read EPW for HKG
+2026-02-02 00:47:29,548 - INFO - Read EPW for NOR
+2026-02-02 00:47:29,587 - INFO - Read external EPW for Riyadh
+2026-02-02 00:47:29,587 - INFO - Inferring parameters from results
+2026-02-02 00:47:29,600 - INFO - Reading file: results\task1\tables\task1_hourly_best.csv
+2026-02-02 00:47:29,600 - INFO - Skipping metric column: Q_solar_total
+2026-02-02 00:47:29,601 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-02 00:47:29,601 - INFO - Skipping metric column: Mask_Target
+2026-02-02 00:47:29,601 - INFO - Reading file: results\task1\tables\task1_best_solution.csv
+2026-02-02 00:47:29,601 - INFO - Skipping metric column: WWR
+2026-02-02 00:47:29,601 - INFO - Column dN has reasonable range [1.11, 1.11], score +1
+2026-02-02 00:47:29,601 - INFO - Selected parameter dN with value 1.1056, score 1
+2026-02-02 00:47:29,601 - INFO - Column dE has reasonable range [0.12, 0.12], score +1
+2026-02-02 00:47:29,601 - INFO - Selected parameter dE with value 0.1190, score 1
+2026-02-02 00:47:29,601 - INFO - Column dS has reasonable range [0.95, 0.95], score +1
+2026-02-02 00:47:29,601 - INFO - Selected parameter dS with value 0.9498, score 1
+2026-02-02 00:47:29,601 - INFO - Column dW has reasonable range [1.10, 1.10], score +1
+2026-02-02 00:47:29,601 - INFO - Selected parameter dW with value 1.0976, score 1
+2026-02-02 00:47:29,601 - INFO - Reading file: results\task2\tables\task2_best_solution.csv
+2026-02-02 00:47:29,601 - INFO - Skipping metric column: WWR
+2026-02-02 00:47:29,601 - INFO - Column dN has reasonable range [0.32, 0.32], score +1
+2026-02-02 00:47:29,601 - INFO - Selected parameter dN with value 0.3221, score 1
+2026-02-02 00:47:29,601 - INFO - Column dE has reasonable range [0.02, 0.02], score +1
+2026-02-02 00:47:29,601 - INFO - Selected parameter dE with value 0.0226, score 1
+2026-02-02 00:47:29,601 - INFO - Column dS has reasonable range [0.99, 0.99], score +1
+2026-02-02 00:47:29,601 - INFO - Selected parameter dS with value 0.9934, score 1
+2026-02-02 00:47:29,601 - INFO - Column dW has reasonable range [0.01, 0.01], score +1
+2026-02-02 00:47:29,602 - INFO - Selected parameter dW with value 0.0135, score 1
+2026-02-02 00:47:29,602 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-02 00:47:29,602 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-02 00:47:29,602 - INFO - Skipping metric column: ASE_Hours
+2026-02-02 00:47:29,602 - INFO - Reading file: results\task2\tables\task2_pareto_results.csv
+2026-02-02 00:47:29,602 - INFO - Skipping metric column: WWR
+2026-02-02 00:47:29,602 - INFO - Column dN has reasonable range [0.00, 0.85], score +1
+2026-02-02 00:47:29,602 - INFO - Selected parameter dN with value 0.0883, score 1
+2026-02-02 00:47:29,602 - INFO - Column dE has reasonable range [0.00, 1.00], score +1
+2026-02-02 00:47:29,602 - INFO - Selected parameter dE with value 0.0550, score 1
+2026-02-02 00:47:29,602 - INFO - Column dS has reasonable range [0.00, 0.99], score +1
+2026-02-02 00:47:29,602 - INFO - Selected parameter dS with value 0.7735, score 1
+2026-02-02 00:47:29,602 - INFO - Column dW has reasonable range [0.00, 0.30], score +1
+2026-02-02 00:47:29,602 - INFO - Selected parameter dW with value 0.0151, score 1
+2026-02-02 00:47:29,602 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-02 00:47:29,602 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-02 00:47:29,602 - INFO - Skipping metric column: ASE_Hours
+2026-02-02 00:47:29,602 - INFO - Inferred parameters: {'dN': 0.0882843574262455, 'dE': 0.05496902685916605, 'dS': 0.7735436382552887, 'dW': 0.01505763956044205}
+2026-02-02 00:47:29,602 - INFO - Computing climate features
+2026-02-02 00:47:29,620 - INFO - Saved climate features and labels
+2026-02-02 00:47:29,620 - INFO - Preparing data for mapping
+2026-02-02 00:47:29,621 - INFO - Selected target parameters: ['dN', 'dE', 'dS', 'dW']
+2026-02-02 00:47:29,621 - INFO - Fitting mapping with method: rules
+2026-02-02 00:47:29,630 - INFO - Rules for dN:
+2026-02-02 00:47:29,630 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+2026-02-02 00:47:29,630 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+2026-02-02 00:47:29,630 - INFO -   ELSE dN=0.0883
+2026-02-02 00:47:29,630 - INFO - Rules for dE:
+2026-02-02 00:47:29,630 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+2026-02-02 00:47:29,630 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+2026-02-02 00:47:29,630 - INFO -   ELSE dE=0.0550
+2026-02-02 00:47:29,630 - INFO - Rules for dS:
+2026-02-02 00:47:29,631 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+2026-02-02 00:47:29,631 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+2026-02-02 00:47:29,631 - INFO -   ELSE dS=0.7735
+2026-02-02 00:47:29,631 - INFO - Rules for dW:
+2026-02-02 00:47:29,631 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+2026-02-02 00:47:29,631 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+2026-02-02 00:47:29,631 - INFO -   ELSE dW=0.0151
+2026-02-02 00:47:29,631 - INFO - Recommending templates
+2026-02-02 00:47:29,634 - INFO - Template for HKG: {'dN': 0.0882843574262455, 'dE': 0.05496902685916605, 'dS': 0.7735436382552887, 'dW': 0.01505763956044205, 'location': 'HKG'}
+2026-02-02 00:47:29,634 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+  ELSE dN=0.0883
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+  ELSE dE=0.0550
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+  ELSE dS=0.7735
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+  ELSE dW=0.0151
+2026-02-02 00:47:29,637 - INFO - Template for NOR: {'dN': 0.0882843574262455, 'dE': 0.05496902685916605, 'dS': 0.7735436382552887, 'dW': 0.015057639560442048, 'location': 'NOR'}
+2026-02-02 00:47:29,637 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+  ELSE dN=0.0883
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+  ELSE dE=0.0550
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+  ELSE dS=0.7735
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+  ELSE dW=0.0151
+2026-02-02 00:47:29,638 - INFO - Template for Riyadh: {'dN': 0.0882843574262455, 'dE': 0.05496902685916605, 'dS': 0.7735436382552887, 'dW': 0.01505763956044205, 'location': 'Riyadh'}
+2026-02-02 00:47:29,638 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+  ELSE dN=0.0883
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+  ELSE dE=0.0550
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+  ELSE dS=0.7735
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+  ELSE dW=0.0151
+2026-02-02 00:47:29,639 - INFO - Saved template parameters
+2026-02-02 00:47:29,639 - INFO - Evaluating solutions
+2026-02-02 00:47:29,675 - INFO - Evaluation for HKG: {'baseline': {'E_cool': 209210.78993626416, 'E_heat': 0.0, 'ASE': 8372.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 178998.18893692776, 'E_heat': 0.0, 'ASE': 7235.126614879407, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 103122.72, 'E_heat': 0.0, 'ASE': 4380.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': -0.14441225047972256, 'E_heat': 0, 'ASE': -0.1357947187196122}, 'optimized_vs_baseline': {'E_cool': -0.5070869909175515, 'E_heat': 0, 'ASE': -0.4768275203057812}, 'location': 'HKG'}
+2026-02-02 00:47:29,715 - INFO - Evaluation for NOR: {'baseline': {'E_cool': 0.0, 'E_heat': 415036.6752607012, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 407752.0503419563, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 404471.1392995899, 'ASE': 0.0, 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': -0.017551761935662994, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': -0.025456873069047866, 'ASE': 0}, 'location': 'NOR'}
+2026-02-02 00:47:30,355 - INFO - Evaluation for Riyadh: {'baseline': {'E_cool': np.float64(652177.1108212703), 'E_heat': np.float64(31347.612603711077), 'ASE': np.float64(26098.20828772295), 'R': 0.0, 'cost': 0.0}, 'template': {'E_cool': np.float64(557994.7465362073), 'E_heat': np.float64(31120.348368847062), 'ASE': np.float64(22554.20943420576), 'R': 0.0, 'cost': 0.0}, 'optimized': {'E_cool': np.float64(321466.5821496098), 'E_heat': np.float64(30549.60040864072), 'ASE': np.float64(13653.86434546423), 'R': 0.0, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': np.float64(-0.14441225047972248), 'E_heat': np.float64(-0.0072498099851186154), 'ASE': np.float64(-0.1357947187196122)}, 'optimized_vs_baseline': {'E_cool': np.float64(-0.5070869909175515), 'E_heat': np.float64(-0.025456873069047863), 'ASE': np.float64(-0.4768275203057812)}, 'location': 'Riyadh'}
+2026-02-02 00:47:30,356 - INFO - Saved performance comparison
+2026-02-02 00:47:30,356 - INFO - Performing cross validation
+2026-02-02 00:47:30,357 - INFO - Saved cross validation errors
+2026-02-02 00:47:30,357 - INFO - Cross validation results: {'cv_err_loc': 0.0, 'cv_err_sce': 0.0, 'Err_ext': 0.0}
+2026-02-02 00:47:30,357 - INFO - Generating plots
+2026-02-02 00:47:30,774 - INFO - Generated CDD vs HDD scatter plot
+2026-02-02 00:47:31,119 - INFO - Generated feature bar plot
+2026-02-02 00:47:31,475 - INFO - Generated rules plot
+2026-02-02 00:47:32,034 - INFO - Generated performance comparison plot
+2026-02-02 00:47:32,349 - INFO - Generated Riyadh external validation plot
+2026-02-02 00:47:32,349 - INFO - Task 3 generalization completed successfully
+2026-02-02 00:56:02,387 - INFO - Starting Task 3 generalization
+2026-02-02 00:56:02,388 - INFO - Using mapping method: rules
+2026-02-02 00:56:02,388 - INFO - Seasons mode: 1
+2026-02-02 00:56:02,388 - INFO - Resolved training EPW: data\epw\HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-02 00:56:02,388 - INFO - Resolved training EPW: data\epw\NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-02 00:56:02,388 - INFO - Resolved external EPW: data\epw\SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-02 00:56:02,388 - INFO - Reading EPW data
+2026-02-02 00:56:02,435 - INFO - Read EPW for HKG
+2026-02-02 00:56:02,474 - INFO - Read EPW for NOR
+2026-02-02 00:56:02,514 - INFO - Read external EPW for Riyadh
+2026-02-02 00:56:02,515 - INFO - Inferring parameters from results
+2026-02-02 00:56:02,527 - INFO - Reading file: results\task1\tables\task1_hourly_best.csv
+2026-02-02 00:56:02,527 - INFO - Skipping metric column: Q_solar_total
+2026-02-02 00:56:02,527 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-02 00:56:02,527 - INFO - Skipping metric column: Mask_Target
+2026-02-02 00:56:02,527 - INFO - Reading file: results\task1\tables\task1_best_solution.csv
+2026-02-02 00:56:02,527 - INFO - Skipping metric column: WWR
+2026-02-02 00:56:02,527 - INFO - Column dN has reasonable range [1.11, 1.11], score +1
+2026-02-02 00:56:02,527 - INFO - Selected parameter dN with value 1.1056, score 1
+2026-02-02 00:56:02,527 - INFO - Column dE has reasonable range [0.12, 0.12], score +1
+2026-02-02 00:56:02,527 - INFO - Selected parameter dE with value 0.1190, score 1
+2026-02-02 00:56:02,528 - INFO - Column dS has reasonable range [0.95, 0.95], score +1
+2026-02-02 00:56:02,528 - INFO - Selected parameter dS with value 0.9498, score 1
+2026-02-02 00:56:02,528 - INFO - Column dW has reasonable range [1.10, 1.10], score +1
+2026-02-02 00:56:02,528 - INFO - Selected parameter dW with value 1.0976, score 1
+2026-02-02 00:56:02,528 - INFO - Reading file: results\task2\tables\task2_best_solution.csv
+2026-02-02 00:56:02,528 - INFO - Skipping metric column: WWR
+2026-02-02 00:56:02,528 - INFO - Column dN has reasonable range [0.32, 0.32], score +1
+2026-02-02 00:56:02,528 - INFO - Selected parameter dN with value 0.3221, score 1
+2026-02-02 00:56:02,528 - INFO - Column dE has reasonable range [0.02, 0.02], score +1
+2026-02-02 00:56:02,528 - INFO - Selected parameter dE with value 0.0226, score 1
+2026-02-02 00:56:02,528 - INFO - Column dS has reasonable range [0.99, 0.99], score +1
+2026-02-02 00:56:02,528 - INFO - Selected parameter dS with value 0.9934, score 1
+2026-02-02 00:56:02,528 - INFO - Column dW has reasonable range [0.01, 0.01], score +1
+2026-02-02 00:56:02,528 - INFO - Selected parameter dW with value 0.0135, score 1
+2026-02-02 00:56:02,528 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-02 00:56:02,528 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-02 00:56:02,528 - INFO - Skipping metric column: ASE_Hours
+2026-02-02 00:56:02,528 - INFO - Reading file: results\task2\tables\task2_pareto_results.csv
+2026-02-02 00:56:02,529 - INFO - Skipping metric column: WWR
+2026-02-02 00:56:02,529 - INFO - Column dN has reasonable range [0.00, 0.85], score +1
+2026-02-02 00:56:02,529 - INFO - Selected parameter dN with value 0.0883, score 1
+2026-02-02 00:56:02,529 - INFO - Column dE has reasonable range [0.00, 1.00], score +1
+2026-02-02 00:56:02,529 - INFO - Selected parameter dE with value 0.0550, score 1
+2026-02-02 00:56:02,529 - INFO - Column dS has reasonable range [0.00, 0.99], score +1
+2026-02-02 00:56:02,529 - INFO - Selected parameter dS with value 0.7735, score 1
+2026-02-02 00:56:02,529 - INFO - Column dW has reasonable range [0.00, 0.30], score +1
+2026-02-02 00:56:02,529 - INFO - Selected parameter dW with value 0.0151, score 1
+2026-02-02 00:56:02,529 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-02 00:56:02,529 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-02 00:56:02,529 - INFO - Skipping metric column: ASE_Hours
+2026-02-02 00:56:02,529 - INFO - Inferred parameters: {'dN': 0.0882843574262455, 'dE': 0.05496902685916605, 'dS': 0.7735436382552887, 'dW': 0.01505763956044205}
+2026-02-02 00:56:02,529 - INFO - Computing climate features
+2026-02-02 00:56:02,547 - INFO - Saved climate features and labels
+2026-02-02 00:56:02,547 - INFO - Preparing data for mapping
+2026-02-02 00:56:02,548 - INFO - Selected target parameters: ['dN', 'dE', 'dS', 'dW']
+2026-02-02 00:56:02,548 - INFO - Fitting mapping with method: rules
+2026-02-02 00:56:02,557 - INFO - Rules for dN:
+2026-02-02 00:56:02,557 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+2026-02-02 00:56:02,557 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+2026-02-02 00:56:02,557 - INFO -   ELSE dN=0.0883
+2026-02-02 00:56:02,558 - INFO - Rules for dE:
+2026-02-02 00:56:02,558 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+2026-02-02 00:56:02,558 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+2026-02-02 00:56:02,558 - INFO -   ELSE dE=0.0550
+2026-02-02 00:56:02,558 - INFO - Rules for dS:
+2026-02-02 00:56:02,558 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+2026-02-02 00:56:02,558 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+2026-02-02 00:56:02,558 - INFO -   ELSE dS=0.7735
+2026-02-02 00:56:02,558 - INFO - Rules for dW:
+2026-02-02 00:56:02,558 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+2026-02-02 00:56:02,558 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+2026-02-02 00:56:02,558 - INFO -   ELSE dW=0.0151
+2026-02-02 00:56:02,558 - INFO - Recommending templates
+2026-02-02 00:56:02,561 - INFO - Template for HKG: {'dN': 0.0882843574262455, 'dE': 0.05496902685916605, 'dS': 0.7735436382552887, 'dW': 0.01505763956044205, 'location': 'HKG'}
+2026-02-02 00:56:02,561 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+  ELSE dN=0.0883
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+  ELSE dE=0.0550
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+  ELSE dS=0.7735
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+  ELSE dW=0.0151
+2026-02-02 00:56:02,564 - INFO - Template for NOR: {'dN': 0.0882843574262455, 'dE': 0.05496902685916605, 'dS': 0.7735436382552887, 'dW': 0.015057639560442048, 'location': 'NOR'}
+2026-02-02 00:56:02,564 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+  ELSE dN=0.0883
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+  ELSE dE=0.0550
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+  ELSE dS=0.7735
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+  ELSE dW=0.0151
+2026-02-02 00:56:02,565 - INFO - Template for Riyadh: {'dN': 0.0882843574262455, 'dE': 0.05496902685916605, 'dS': 0.7735436382552887, 'dW': 0.01505763956044205, 'location': 'Riyadh'}
+2026-02-02 00:56:02,565 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+  ELSE dN=0.0883
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+  ELSE dE=0.0550
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+  ELSE dS=0.7735
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+  ELSE dW=0.0151
+2026-02-02 00:56:02,566 - INFO - Saved template parameters
+2026-02-02 00:56:02,566 - INFO - Evaluating solutions
+2026-02-02 00:56:02,603 - INFO - Evaluation for HKG: {'baseline': {'E_cool': 209210.78993626416, 'E_heat': 0.0, 'ASE': 8372.0, 'R': 0.2, 'cost': 0.0}, 'template': {'E_cool': 178998.18893692776, 'E_heat': 0.0, 'ASE': 7235.126614879407, 'R': 0.2, 'cost': 0.0}, 'optimized': {'E_cool': 103122.72, 'E_heat': 0.0, 'ASE': 4380.0, 'R': 0.2, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': -0.14441225047972256, 'E_heat': 0, 'ASE': -0.1357947187196122}, 'optimized_vs_baseline': {'E_cool': -0.5070869909175515, 'E_heat': 0, 'ASE': -0.4768275203057812}, 'location': 'HKG'}
+2026-02-02 00:56:02,641 - INFO - Evaluation for NOR: {'baseline': {'E_cool': 0.0, 'E_heat': 415036.6752607012, 'ASE': 0.0, 'R': 0.5, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 407752.0503419563, 'ASE': 0.0, 'R': 0.5, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 404471.1392995899, 'ASE': 0.0, 'R': 0.5, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': -0.017551761935662994, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': -0.025456873069047866, 'ASE': 0}, 'location': 'NOR'}
+2026-02-02 00:56:03,270 - INFO - Evaluation for Riyadh: {'baseline': {'E_cool': np.float64(652177.1108212703), 'E_heat': np.float64(31347.612603711077), 'ASE': np.float64(26098.20828772295), 'R': 0.2, 'cost': 0.0}, 'template': {'E_cool': np.float64(557994.7465362073), 'E_heat': np.float64(31120.348368847062), 'ASE': np.float64(22554.20943420576), 'R': 0.2, 'cost': 0.0}, 'optimized': {'E_cool': np.float64(321466.5821496098), 'E_heat': np.float64(30549.60040864072), 'ASE': np.float64(13653.86434546423), 'R': 0.2, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': np.float64(-0.14441225047972248), 'E_heat': np.float64(-0.0072498099851186154), 'ASE': np.float64(-0.1357947187196122)}, 'optimized_vs_baseline': {'E_cool': np.float64(-0.5070869909175515), 'E_heat': np.float64(-0.025456873069047863), 'ASE': np.float64(-0.4768275203057812)}, 'location': 'Riyadh'}
+2026-02-02 00:56:03,271 - INFO - Saved performance comparison
+2026-02-02 00:56:03,271 - INFO - Performing cross validation
+2026-02-02 00:56:03,272 - INFO - Saved cross validation errors
+2026-02-02 00:56:03,272 - INFO - Cross validation results: {'cv_err_loc': 0.0, 'cv_err_sce': 0.0, 'Err_ext': 0.0}
+2026-02-02 00:56:03,273 - INFO - Generating plots
+2026-02-02 00:56:03,679 - INFO - Generated CDD vs HDD scatter plot
+2026-02-02 00:56:03,998 - INFO - Generated feature bar plot
+2026-02-02 00:56:04,340 - INFO - Generated rules plot
+2026-02-02 00:56:04,884 - INFO - Generated performance comparison plot
+2026-02-02 00:56:05,182 - INFO - Generated Riyadh external validation plot
+2026-02-02 00:56:05,182 - INFO - Task 3 generalization completed successfully
+2026-02-02 00:59:21,621 - INFO - Starting Task 3 generalization
+2026-02-02 00:59:21,621 - INFO - Using mapping method: rules
+2026-02-02 00:59:21,622 - INFO - Seasons mode: 1
+2026-02-02 00:59:21,622 - INFO - Resolved training EPW: data\epw\HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-02 00:59:21,622 - INFO - Resolved training EPW: data\epw\NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-02 00:59:21,622 - INFO - Resolved external EPW: data\epw\SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-02 00:59:21,622 - INFO - Reading EPW data
+2026-02-02 00:59:21,668 - INFO - Read EPW for HKG
+2026-02-02 00:59:21,708 - INFO - Read EPW for NOR
+2026-02-02 00:59:21,748 - INFO - Read external EPW for Riyadh
+2026-02-02 00:59:21,748 - INFO - Inferring parameters from results
+2026-02-02 00:59:21,762 - INFO - Reading file: results\task1\tables\task1_hourly_best.csv
+2026-02-02 00:59:21,762 - INFO - Skipping metric column: Q_solar_total
+2026-02-02 00:59:21,762 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-02 00:59:21,762 - INFO - Skipping metric column: Mask_Target
+2026-02-02 00:59:21,762 - INFO - Reading file: results\task1\tables\task1_best_solution.csv
+2026-02-02 00:59:21,763 - INFO - Skipping metric column: WWR
+2026-02-02 00:59:21,763 - INFO - Column dN has reasonable range [1.11, 1.11], score +1
+2026-02-02 00:59:21,763 - INFO - Selected parameter dN with value 1.1056, score 1
+2026-02-02 00:59:21,763 - INFO - Column dE has reasonable range [0.12, 0.12], score +1
+2026-02-02 00:59:21,763 - INFO - Selected parameter dE with value 0.1190, score 1
+2026-02-02 00:59:21,763 - INFO - Column dS has reasonable range [0.95, 0.95], score +1
+2026-02-02 00:59:21,763 - INFO - Selected parameter dS with value 0.9498, score 1
+2026-02-02 00:59:21,763 - INFO - Column dW has reasonable range [1.10, 1.10], score +1
+2026-02-02 00:59:21,763 - INFO - Selected parameter dW with value 1.0976, score 1
+2026-02-02 00:59:21,763 - INFO - Reading file: results\task2\tables\task2_best_solution.csv
+2026-02-02 00:59:21,763 - INFO - Skipping metric column: WWR
+2026-02-02 00:59:21,763 - INFO - Column dN has reasonable range [0.32, 0.32], score +1
+2026-02-02 00:59:21,763 - INFO - Selected parameter dN with value 0.3221, score 1
+2026-02-02 00:59:21,763 - INFO - Column dE has reasonable range [0.02, 0.02], score +1
+2026-02-02 00:59:21,763 - INFO - Selected parameter dE with value 0.0226, score 1
+2026-02-02 00:59:21,763 - INFO - Column dS has reasonable range [0.99, 0.99], score +1
+2026-02-02 00:59:21,763 - INFO - Selected parameter dS with value 0.9934, score 1
+2026-02-02 00:59:21,763 - INFO - Column dW has reasonable range [0.01, 0.01], score +1
+2026-02-02 00:59:21,763 - INFO - Selected parameter dW with value 0.0135, score 1
+2026-02-02 00:59:21,763 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-02 00:59:21,763 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-02 00:59:21,763 - INFO - Skipping metric column: ASE_Hours
+2026-02-02 00:59:21,763 - INFO - Reading file: results\task2\tables\task2_pareto_results.csv
+2026-02-02 00:59:21,764 - INFO - Skipping metric column: WWR
+2026-02-02 00:59:21,764 - INFO - Column dN has reasonable range [0.00, 0.85], score +1
+2026-02-02 00:59:21,764 - INFO - Selected parameter dN with value 0.0883, score 1
+2026-02-02 00:59:21,764 - INFO - Column dE has reasonable range [0.00, 1.00], score +1
+2026-02-02 00:59:21,764 - INFO - Selected parameter dE with value 0.0550, score 1
+2026-02-02 00:59:21,764 - INFO - Column dS has reasonable range [0.00, 0.99], score +1
+2026-02-02 00:59:21,764 - INFO - Selected parameter dS with value 0.7735, score 1
+2026-02-02 00:59:21,764 - INFO - Column dW has reasonable range [0.00, 0.30], score +1
+2026-02-02 00:59:21,764 - INFO - Selected parameter dW with value 0.0151, score 1
+2026-02-02 00:59:21,764 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-02 00:59:21,764 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-02 00:59:21,764 - INFO - Skipping metric column: ASE_Hours
+2026-02-02 00:59:21,764 - INFO - Inferred parameters: {'dN': 0.0882843574262455, 'dE': 0.05496902685916605, 'dS': 0.7735436382552887, 'dW': 0.01505763956044205}
+2026-02-02 00:59:21,764 - INFO - Computing climate features
+2026-02-02 00:59:21,780 - INFO - Saved climate features and labels
+2026-02-02 00:59:21,780 - INFO - Preparing data for mapping
+2026-02-02 00:59:21,781 - INFO - Selected target parameters: ['dN', 'dE', 'dS', 'dW']
+2026-02-02 00:59:21,782 - INFO - Fitting mapping with method: rules
+2026-02-02 00:59:21,790 - INFO - Rules for dN:
+2026-02-02 00:59:21,790 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+2026-02-02 00:59:21,790 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+2026-02-02 00:59:21,790 - INFO -   ELSE dN=0.0883
+2026-02-02 00:59:21,790 - INFO - Rules for dE:
+2026-02-02 00:59:21,790 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+2026-02-02 00:59:21,790 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+2026-02-02 00:59:21,790 - INFO -   ELSE dE=0.0550
+2026-02-02 00:59:21,790 - INFO - Rules for dS:
+2026-02-02 00:59:21,790 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+2026-02-02 00:59:21,790 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+2026-02-02 00:59:21,790 - INFO -   ELSE dS=0.7735
+2026-02-02 00:59:21,790 - INFO - Rules for dW:
+2026-02-02 00:59:21,791 - INFO -   IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+2026-02-02 00:59:21,791 - INFO -   IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+2026-02-02 00:59:21,791 - INFO -   ELSE dW=0.0151
+2026-02-02 00:59:21,791 - INFO - Recommending templates
+2026-02-02 00:59:21,794 - INFO - Template for HKG: {'dN': 0.0882843574262455, 'dE': 0.05496902685916605, 'dS': 0.7735436382552887, 'dW': 0.01505763956044205, 'location': 'HKG'}
+2026-02-02 00:59:21,794 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+  ELSE dN=0.0883
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+  ELSE dE=0.0550
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+  ELSE dS=0.7735
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+  ELSE dW=0.0151
+2026-02-02 00:59:21,797 - INFO - Template for NOR: {'dN': 0.0882843574262455, 'dE': 0.05496902685916605, 'dS': 0.7735436382552887, 'dW': 0.015057639560442048, 'location': 'NOR'}
+2026-02-02 00:59:21,797 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+  ELSE dN=0.0883
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+  ELSE dE=0.0550
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+  ELSE dS=0.7735
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+  ELSE dW=0.0151
+2026-02-02 00:59:21,799 - INFO - Template for Riyadh: {'dN': 0.0882843574262455, 'dE': 0.05496902685916605, 'dS': 0.7735436382552887, 'dW': 0.01505763956044205, 'location': 'Riyadh'}
+2026-02-02 00:59:21,799 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dN=0.0883
+  ELSE dN=0.0883
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dE=0.0550
+  ELSE dE=0.0550
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dS=0.7735
+  ELSE dS=0.7735
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+  IF load_type=heating AND solar=low AND humidity=dry AND swing=small THEN dW=0.0151
+  ELSE dW=0.0151
+2026-02-02 00:59:21,800 - INFO - Saved template parameters
+2026-02-02 00:59:21,800 - INFO - Evaluating solutions
+2026-02-02 00:59:21,835 - INFO - Evaluation for HKG: {'baseline': {'E_cool': 209210.78993626416, 'E_heat': 0.0, 'ASE': 8372.0, 'R': 0.2, 'cost': 0.0}, 'template': {'E_cool': 178998.18893692776, 'E_heat': 0.0, 'ASE': 7235.126614879407, 'R': 0.2, 'cost': 0.0}, 'optimized': {'E_cool': 103122.72, 'E_heat': 0.0, 'ASE': 4380.0, 'R': 0.2, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': -0.14441225047972256, 'E_heat': 0, 'ASE': -0.1357947187196122}, 'optimized_vs_baseline': {'E_cool': -0.5070869909175515, 'E_heat': 0, 'ASE': -0.4768275203057812}, 'location': 'HKG'}
+2026-02-02 00:59:21,871 - INFO - Evaluation for NOR: {'baseline': {'E_cool': 0.0, 'E_heat': 415036.6752607012, 'ASE': 0.0, 'R': 0.5, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 407752.0503419563, 'ASE': 0.0, 'R': 0.5, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 404471.1392995899, 'ASE': 0.0, 'R': 0.5, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': -0.017551761935662994, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': -0.025456873069047866, 'ASE': 0}, 'location': 'NOR'}
+2026-02-02 00:59:22,477 - INFO - Evaluation for Riyadh: {'baseline': {'E_cool': np.float64(652177.1108212703), 'E_heat': np.float64(31347.612603711077), 'ASE': np.float64(26098.20828772295), 'R': 0.2, 'cost': 0.0}, 'template': {'E_cool': np.float64(557994.7465362073), 'E_heat': np.float64(31120.348368847062), 'ASE': np.float64(22554.20943420576), 'R': 0.2, 'cost': 0.0}, 'optimized': {'E_cool': np.float64(321466.5821496098), 'E_heat': np.float64(30549.60040864072), 'ASE': np.float64(13653.86434546423), 'R': 0.2, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': np.float64(-0.14441225047972248), 'E_heat': np.float64(-0.0072498099851186154), 'ASE': np.float64(-0.1357947187196122)}, 'optimized_vs_baseline': {'E_cool': np.float64(-0.5070869909175515), 'E_heat': np.float64(-0.025456873069047863), 'ASE': np.float64(-0.4768275203057812)}, 'location': 'Riyadh'}
+2026-02-02 00:59:22,478 - INFO - Saved performance comparison
+2026-02-02 00:59:22,478 - INFO - Performing cross validation
+2026-02-02 00:59:22,479 - INFO - Saved cross validation errors
+2026-02-02 00:59:22,479 - INFO - Cross validation results: {'cv_err_loc': 0.0, 'cv_err_sce': 0.0, 'Err_ext': 0.0}
+2026-02-02 00:59:22,479 - INFO - Generating plots
+2026-02-02 00:59:22,886 - INFO - Generated CDD vs HDD scatter plot
+2026-02-02 00:59:23,224 - INFO - Generated feature bar plot
+2026-02-02 00:59:23,573 - INFO - Generated rules plot
+2026-02-02 00:59:24,105 - INFO - Generated performance comparison plot
+2026-02-02 00:59:24,409 - INFO - Generated Riyadh external validation plot
+2026-02-02 00:59:24,409 - INFO - Task 3 generalization completed successfully
+2026-02-02 01:21:57,828 - INFO - Starting Task 3 generalization
+2026-02-02 01:21:57,828 - INFO - Using mapping method: rules
+2026-02-02 01:21:57,828 - INFO - Seasons mode: 1
+2026-02-02 01:21:57,828 - INFO - Resolved training EPW: data/epw/HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-02 01:21:57,828 - INFO - Resolved training EPW: data/epw/NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-02 01:21:57,828 - INFO - Resolved external EPW: data/epw/SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-02 01:21:57,829 - INFO - Reading EPW data
+2026-02-02 01:21:57,874 - INFO - Read EPW for HKG
+2026-02-02 01:21:57,915 - INFO - Read EPW for NOR
+2026-02-02 01:21:57,954 - INFO - Read external EPW for Riyadh
+2026-02-02 01:21:57,954 - INFO - Inferring parameters from results
+2026-02-02 01:21:57,968 - INFO - Reading file: results\task1\tables\task1_hourly_best.csv
+2026-02-02 01:21:57,968 - INFO - Skipping metric column: Q_solar_total
+2026-02-02 01:21:57,968 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-02 01:21:57,968 - INFO - Skipping metric column: Mask_Target
+2026-02-02 01:21:57,968 - INFO - Reading file: results\task1\tables\task1_best_solution.csv
+2026-02-02 01:21:57,968 - INFO - Skipping metric column: WWR
+2026-02-02 01:21:57,968 - INFO - Column dN has reasonable range [1.11, 1.11], score +1
+2026-02-02 01:21:57,968 - INFO - Selected parameter dN with value 1.1056, score 1
+2026-02-02 01:21:57,968 - INFO - Column dE has reasonable range [0.12, 0.12], score +1
+2026-02-02 01:21:57,968 - INFO - Selected parameter dE with value 0.1190, score 1
+2026-02-02 01:21:57,968 - INFO - Column dS has reasonable range [0.95, 0.95], score +1
+2026-02-02 01:21:57,968 - INFO - Selected parameter dS with value 0.9498, score 1
+2026-02-02 01:21:57,968 - INFO - Column dW has reasonable range [1.10, 1.10], score +1
+2026-02-02 01:21:57,968 - INFO - Selected parameter dW with value 1.0976, score 1
+2026-02-02 01:21:57,968 - INFO - Reading file: results\task2\tables\task2_best_solution.csv
+2026-02-02 01:21:57,969 - INFO - Skipping metric column: WWR
+2026-02-02 01:21:57,969 - INFO - Column dN has reasonable range [0.32, 0.32], score +1
+2026-02-02 01:21:57,969 - INFO - Selected parameter dN with value 0.3221, score 1
+2026-02-02 01:21:57,969 - INFO - Column dE has reasonable range [0.02, 0.02], score +1
+2026-02-02 01:21:57,969 - INFO - Selected parameter dE with value 0.0226, score 1
+2026-02-02 01:21:57,969 - INFO - Column dS has reasonable range [0.99, 0.99], score +1
+2026-02-02 01:21:57,969 - INFO - Selected parameter dS with value 0.9934, score 1
+2026-02-02 01:21:57,969 - INFO - Column dW has reasonable range [0.01, 0.01], score +1
+2026-02-02 01:21:57,969 - INFO - Selected parameter dW with value 0.0135, score 1
+2026-02-02 01:21:57,969 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-02 01:21:57,969 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-02 01:21:57,969 - INFO - Skipping metric column: ASE_Hours
+2026-02-02 01:21:57,969 - INFO - Reading file: results\task2\tables\task2_pareto_results.csv
+2026-02-02 01:21:57,969 - INFO - Skipping metric column: WWR
+2026-02-02 01:21:57,969 - INFO - Column dN has reasonable range [0.00, 0.85], score +1
+2026-02-02 01:21:57,969 - INFO - Selected parameter dN with value 0.0883, score 1
+2026-02-02 01:21:57,969 - INFO - Column dE has reasonable range [0.00, 1.00], score +1
+2026-02-02 01:21:57,969 - INFO - Selected parameter dE with value 0.0550, score 1
+2026-02-02 01:21:57,969 - INFO - Column dS has reasonable range [0.00, 0.99], score +1
+2026-02-02 01:21:57,969 - INFO - Selected parameter dS with value 0.7735, score 1
+2026-02-02 01:21:57,969 - INFO - Column dW has reasonable range [0.00, 0.30], score +1
+2026-02-02 01:21:57,969 - INFO - Selected parameter dW with value 0.0151, score 1
+2026-02-02 01:21:57,969 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-02 01:21:57,969 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-02 01:21:57,969 - INFO - Skipping metric column: ASE_Hours
+2026-02-02 01:21:57,969 - INFO - Inferred parameters: {'dN': 0.0882843574262455, 'dE': 0.05496902685916605, 'dS': 0.7735436382552887, 'dW': 0.01505763956044205}
+2026-02-02 01:21:57,970 - INFO - Computing climate features
+2026-02-02 01:21:57,985 - INFO - Saved climate features and labels
+2026-02-02 01:21:57,985 - INFO - Preparing data for mapping
+2026-02-02 01:21:57,986 - INFO - Selected target parameters: ['dN', 'dE', 'dS', 'dW']
+2026-02-02 01:21:57,986 - INFO - Fitting mapping with method: rules
+2026-02-02 01:21:57,995 - INFO - Rules for dN:
+2026-02-02 01:21:57,995 - INFO -   IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dN=0.0883
+2026-02-02 01:21:57,995 - INFO -   IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dN=0.0883
+2026-02-02 01:21:57,995 - INFO -   ELSE dN=0.0883
+2026-02-02 01:21:57,995 - INFO - Rules for dE:
+2026-02-02 01:21:57,995 - INFO -   IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dE=0.0550
+2026-02-02 01:21:57,995 - INFO -   IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dE=0.0550
+2026-02-02 01:21:57,995 - INFO -   ELSE dE=0.0550
+2026-02-02 01:21:57,995 - INFO - Rules for dS:
+2026-02-02 01:21:57,995 - INFO -   IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dS=0.7735
+2026-02-02 01:21:57,995 - INFO -   IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dS=0.7735
+2026-02-02 01:21:57,995 - INFO -   ELSE dS=0.7735
+2026-02-02 01:21:57,995 - INFO - Rules for dW:
+2026-02-02 01:21:57,996 - INFO -   IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dW=0.0151
+2026-02-02 01:21:57,996 - INFO -   IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dW=0.0151
+2026-02-02 01:21:57,996 - INFO -   ELSE dW=0.0151
+2026-02-02 01:21:57,996 - INFO - Recommending templates
+2026-02-02 01:21:57,999 - INFO - Template for HKG: {'dN': 0.0882843574262455, 'dE': 0.05496902685916605, 'dS': 0.7735436382552887, 'dW': 0.01505763956044205, 'location': 'HKG'}
+2026-02-02 01:21:57,999 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dN=0.0883
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dN=0.0883
+  ELSE dN=0.0883
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dE=0.0550
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dE=0.0550
+  ELSE dE=0.0550
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dS=0.7735
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dS=0.7735
+  ELSE dS=0.7735
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dW=0.0151
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dW=0.0151
+  ELSE dW=0.0151
+2026-02-02 01:21:58,002 - INFO - Template for NOR: {'dN': 0.0882843574262455, 'dE': 0.05496902685916605, 'dS': 0.7735436382552887, 'dW': 0.015057639560442048, 'location': 'NOR'}
+2026-02-02 01:21:58,002 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dN=0.0883
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dN=0.0883
+  ELSE dN=0.0883
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dE=0.0550
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dE=0.0550
+  ELSE dE=0.0550
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dS=0.7735
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dS=0.7735
+  ELSE dS=0.7735
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dW=0.0151
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dW=0.0151
+  ELSE dW=0.0151
+2026-02-02 01:21:58,003 - INFO - Template for Riyadh: {'dN': 0.0882843574262455, 'dE': 0.05496902685916605, 'dS': 0.7735436382552887, 'dW': 0.01505763956044205, 'location': 'Riyadh'}
+2026-02-02 01:21:58,004 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dN=0.0883
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dN=0.0883
+  ELSE dN=0.0883
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dE=0.0550
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dE=0.0550
+  ELSE dE=0.0550
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dS=0.7735
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dS=0.7735
+  ELSE dS=0.7735
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dW=0.0151
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dW=0.0151
+  ELSE dW=0.0151
+2026-02-02 01:21:58,005 - INFO - Saved template parameters
+2026-02-02 01:21:58,005 - INFO - Evaluating solutions
+2026-02-02 01:21:58,041 - INFO - Evaluation for HKG: {'baseline': {'E_cool': 209210.78993626416, 'E_heat': 0.0, 'ASE': 8372.0, 'R': 0.2, 'cost': 0.0}, 'template': {'E_cool': 178998.18893692776, 'E_heat': 0.0, 'ASE': 7235.126614879407, 'R': 0.31294454085574497, 'cost': 0.0}, 'optimized': {'E_cool': 103122.72, 'E_heat': 0.0, 'ASE': 4380.0, 'R': 0.5965917515505101, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': -0.14441225047972256, 'E_heat': 0, 'ASE': -0.1357947187196122}, 'optimized_vs_baseline': {'E_cool': -0.5070869909175515, 'E_heat': 0, 'ASE': -0.4768275203057812}, 'location': 'HKG'}
+2026-02-02 01:21:58,082 - INFO - Evaluation for NOR: {'baseline': {'E_cool': 0.0, 'E_heat': 415036.6752607012, 'ASE': 0.0, 'R': 0.5, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 407752.0503419563, 'ASE': 0.0, 'R': 0.5087758809678316, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 404471.1392995899, 'ASE': 0.0, 'R': 0.5127284365345239, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': -0.017551761935662994, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': -0.025456873069047866, 'ASE': 0}, 'location': 'NOR'}
+2026-02-02 01:21:58,702 - INFO - Evaluation for Riyadh: {'baseline': {'E_cool': np.float64(652177.1108212703), 'E_heat': np.float64(31347.612603711077), 'ASE': np.float64(26098.20828772295), 'R': 0.2, 'cost': 0.0}, 'template': {'E_cool': np.float64(557994.7465362073), 'E_heat': np.float64(31120.348368847062), 'ASE': np.float64(22554.20943420576), 'R': np.float64(0.30979928882531393), 'cost': 0.0}, 'optimized': {'E_cool': np.float64(321466.5821496098), 'E_heat': np.float64(30549.60040864072), 'ASE': np.float64(13653.86434546423), 'R': np.float64(0.5855475611685278), 'cost': 0.0}, 'template_vs_baseline': {'E_cool': np.float64(-0.14441225047972248), 'E_heat': np.float64(-0.0072498099851186154), 'ASE': np.float64(-0.1357947187196122)}, 'optimized_vs_baseline': {'E_cool': np.float64(-0.5070869909175515), 'E_heat': np.float64(-0.025456873069047863), 'ASE': np.float64(-0.4768275203057812)}, 'location': 'Riyadh'}
+2026-02-02 01:21:58,703 - INFO - Saved performance comparison
+2026-02-02 01:21:58,703 - INFO - Performing cross validation
+2026-02-02 01:21:58,704 - INFO - Saved cross validation errors
+2026-02-02 01:21:58,704 - INFO - Cross validation results: {'cv_err_loc': 0.0, 'cv_err_sce': 0.0, 'Err_ext': 0.0}
+2026-02-02 01:21:58,704 - INFO - Generating plots
+2026-02-02 01:21:59,139 - INFO - Generated CDD vs HDD scatter plot
+2026-02-02 01:21:59,459 - INFO - Generated feature bar plot
+2026-02-02 01:21:59,800 - INFO - Generated rules plot
+2026-02-02 01:22:00,377 - INFO - Generated performance comparison plot
+2026-02-02 01:22:00,671 - INFO - Generated Riyadh external validation plot
+2026-02-02 01:22:00,671 - INFO - Task 3 generalization completed successfully
+2026-02-02 01:25:38,532 - INFO - Starting Task 3 generalization
+2026-02-02 01:25:38,532 - INFO - Using mapping method: rules
+2026-02-02 01:25:38,532 - INFO - Seasons mode: 1
+2026-02-02 01:25:38,532 - INFO - Resolved training EPW: data/epw/HKG_NT_Lau.Fau.Shan.450350_TMYx.2009-2023.epw
+2026-02-02 01:25:38,532 - INFO - Resolved training EPW: data/epw/NOR_OS_Oslo.Blindern.014920_TMYx.2009-2023.epw
+2026-02-02 01:25:38,533 - INFO - Resolved external EPW: data/epw/SAU_RI_Riyadh.AB.404380_TMYx.2009-2023.epw
+2026-02-02 01:25:38,533 - INFO - Reading EPW data
+2026-02-02 01:25:38,579 - INFO - Read EPW for HKG
+2026-02-02 01:25:38,619 - INFO - Read EPW for NOR
+2026-02-02 01:25:38,660 - INFO - Read external EPW for Riyadh
+2026-02-02 01:25:38,660 - INFO - Inferring parameters from results
+2026-02-02 01:25:38,672 - INFO - Reading file: results\task1\tables\task1_hourly_best.csv
+2026-02-02 01:25:38,673 - INFO - Skipping metric column: Q_solar_total
+2026-02-02 01:25:38,673 - INFO - Skipping metric column: Cooling_Load_W
+2026-02-02 01:25:38,673 - INFO - Skipping metric column: Mask_Target
+2026-02-02 01:25:38,673 - INFO - Reading file: results\task1\tables\task1_best_solution.csv
+2026-02-02 01:25:38,673 - INFO - Skipping metric column: WWR
+2026-02-02 01:25:38,673 - INFO - Column dN has reasonable range [1.11, 1.11], score +1
+2026-02-02 01:25:38,673 - INFO - Selected parameter dN with value 1.1056, score 1
+2026-02-02 01:25:38,673 - INFO - Column dE has reasonable range [0.12, 0.12], score +1
+2026-02-02 01:25:38,673 - INFO - Selected parameter dE with value 0.1190, score 1
+2026-02-02 01:25:38,673 - INFO - Column dS has reasonable range [0.95, 0.95], score +1
+2026-02-02 01:25:38,673 - INFO - Selected parameter dS with value 0.9498, score 1
+2026-02-02 01:25:38,673 - INFO - Column dW has reasonable range [1.10, 1.10], score +1
+2026-02-02 01:25:38,673 - INFO - Selected parameter dW with value 1.0976, score 1
+2026-02-02 01:25:38,674 - INFO - Reading file: results\task2\tables\task2_best_solution.csv
+2026-02-02 01:25:38,674 - INFO - Skipping metric column: WWR
+2026-02-02 01:25:38,674 - INFO - Column dN has reasonable range [0.32, 0.32], score +1
+2026-02-02 01:25:38,674 - INFO - Selected parameter dN with value 0.3221, score 1
+2026-02-02 01:25:38,674 - INFO - Column dE has reasonable range [0.02, 0.02], score +1
+2026-02-02 01:25:38,674 - INFO - Selected parameter dE with value 0.0226, score 1
+2026-02-02 01:25:38,674 - INFO - Column dS has reasonable range [0.99, 0.99], score +1
+2026-02-02 01:25:38,674 - INFO - Selected parameter dS with value 0.9934, score 1
+2026-02-02 01:25:38,674 - INFO - Column dW has reasonable range [0.01, 0.01], score +1
+2026-02-02 01:25:38,674 - INFO - Selected parameter dW with value 0.0135, score 1
+2026-02-02 01:25:38,674 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-02 01:25:38,674 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-02 01:25:38,674 - INFO - Skipping metric column: ASE_Hours
+2026-02-02 01:25:38,674 - INFO - Reading file: results\task2\tables\task2_pareto_results.csv
+2026-02-02 01:25:38,674 - INFO - Skipping metric column: WWR
+2026-02-02 01:25:38,674 - INFO - Column dN has reasonable range [0.00, 0.85], score +1
+2026-02-02 01:25:38,674 - INFO - Selected parameter dN with value 0.0883, score 1
+2026-02-02 01:25:38,674 - INFO - Column dE has reasonable range [0.00, 1.00], score +1
+2026-02-02 01:25:38,674 - INFO - Selected parameter dE with value 0.0550, score 1
+2026-02-02 01:25:38,674 - INFO - Column dS has reasonable range [0.00, 0.99], score +1
+2026-02-02 01:25:38,674 - INFO - Selected parameter dS with value 0.7735, score 1
+2026-02-02 01:25:38,675 - INFO - Column dW has reasonable range [0.00, 0.30], score +1
+2026-02-02 01:25:38,675 - INFO - Selected parameter dW with value 0.0151, score 1
+2026-02-02 01:25:38,675 - INFO - Skipping metric column: Annual_Energy_kWh
+2026-02-02 01:25:38,675 - INFO - Skipping metric column: Lifecycle_Cost_USD
+2026-02-02 01:25:38,675 - INFO - Skipping metric column: ASE_Hours
+2026-02-02 01:25:38,675 - INFO - Inferred parameters: {'dN': 0.0882843574262455, 'dE': 0.05496902685916605, 'dS': 0.7735436382552887, 'dW': 0.01505763956044205}
+2026-02-02 01:25:38,675 - INFO - Computing climate features
+2026-02-02 01:25:38,690 - INFO - Saved climate features and labels
+2026-02-02 01:25:38,690 - INFO - Preparing data for mapping
+2026-02-02 01:25:38,692 - INFO - Selected target parameters: ['dN', 'dE', 'dS', 'dW']
+2026-02-02 01:25:38,692 - INFO - Fitting mapping with method: rules
+2026-02-02 01:25:38,699 - INFO - Rules for dN:
+2026-02-02 01:25:38,699 - INFO -   IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dN=0.0883
+2026-02-02 01:25:38,699 - INFO -   IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dN=0.0883
+2026-02-02 01:25:38,699 - INFO -   ELSE dN=0.0883
+2026-02-02 01:25:38,700 - INFO - Rules for dE:
+2026-02-02 01:25:38,700 - INFO -   IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dE=0.0550
+2026-02-02 01:25:38,700 - INFO -   IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dE=0.0550
+2026-02-02 01:25:38,700 - INFO -   ELSE dE=0.0550
+2026-02-02 01:25:38,700 - INFO - Rules for dS:
+2026-02-02 01:25:38,700 - INFO -   IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dS=0.7735
+2026-02-02 01:25:38,700 - INFO -   IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dS=0.7735
+2026-02-02 01:25:38,700 - INFO -   ELSE dS=0.7735
+2026-02-02 01:25:38,700 - INFO - Rules for dW:
+2026-02-02 01:25:38,700 - INFO -   IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dW=0.0151
+2026-02-02 01:25:38,700 - INFO -   IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dW=0.0151
+2026-02-02 01:25:38,700 - INFO -   ELSE dW=0.0151
+2026-02-02 01:25:38,700 - INFO - Recommending templates
+2026-02-02 01:25:38,703 - INFO - Template for HKG: {'dN': 0.0882843574262455, 'dE': 0.05496902685916605, 'dS': 0.7735436382552887, 'dW': 0.01505763956044205, 'location': 'HKG'}
+2026-02-02 01:25:38,703 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dN=0.0883
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dN=0.0883
+  ELSE dN=0.0883
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dE=0.0550
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dE=0.0550
+  ELSE dE=0.0550
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dS=0.7735
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dS=0.7735
+  ELSE dS=0.7735
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dW=0.0151
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dW=0.0151
+  ELSE dW=0.0151
+2026-02-02 01:25:38,706 - INFO - Template for NOR: {'dN': 0.0882843574262455, 'dE': 0.05496902685916605, 'dS': 0.7735436382552887, 'dW': 0.015057639560442048, 'location': 'NOR'}
+2026-02-02 01:25:38,706 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dN=0.0883
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dN=0.0883
+  ELSE dN=0.0883
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dE=0.0550
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dE=0.0550
+  ELSE dE=0.0550
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dS=0.7735
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dS=0.7735
+  ELSE dS=0.7735
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dW=0.0151
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dW=0.0151
+  ELSE dW=0.0151
+2026-02-02 01:25:38,706 - INFO - Template for Riyadh: {'dN': 0.0882843574262455, 'dE': 0.05496902685916605, 'dS': 0.7735436382552887, 'dW': 0.01505763956044205, 'location': 'Riyadh'}
+2026-02-02 01:25:38,706 - INFO - Rule trace: For dN:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dN=0.0883
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dN=0.0883
+  ELSE dN=0.0883
+For dE:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dE=0.0550
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dE=0.0550
+  ELSE dE=0.0550
+For dS:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dS=0.7735
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dS=0.7735
+  ELSE dS=0.7735
+For dW:
+  IF load_type=cooling AND solar=low AND humidity=humid AND swing=small THEN dW=0.0151
+  IF load_type=heating AND solar=low AND humidity=humid AND swing=small THEN dW=0.0151
+  ELSE dW=0.0151
+2026-02-02 01:25:38,708 - INFO - Saved template parameters
+2026-02-02 01:25:38,708 - INFO - Evaluating solutions
+2026-02-02 01:25:38,743 - INFO - Evaluation for HKG: {'baseline': {'E_cool': 209210.78993626416, 'E_heat': 0.0, 'ASE': 8372.0, 'R': 0.2, 'cost': 0.0}, 'template': {'E_cool': 178998.18893692776, 'E_heat': 0.0, 'ASE': 7235.126614879407, 'R': 0.31294454085574497, 'cost': 0.0}, 'optimized': {'E_cool': 103122.72, 'E_heat': 0.0, 'ASE': 4380.0, 'R': 0.5965917515505101, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': -0.14441225047972256, 'E_heat': 0, 'ASE': -0.1357947187196122}, 'optimized_vs_baseline': {'E_cool': -0.5070869909175515, 'E_heat': 0, 'ASE': -0.4768275203057812}, 'location': 'HKG'}
+2026-02-02 01:25:38,781 - INFO - Evaluation for NOR: {'baseline': {'E_cool': 0.0, 'E_heat': 415036.6752607012, 'ASE': 0.0, 'R': 0.5, 'cost': 0.0}, 'template': {'E_cool': 0.0, 'E_heat': 407752.0503419563, 'ASE': 0.0, 'R': 0.5087758809678316, 'cost': 0.0}, 'optimized': {'E_cool': 0.0, 'E_heat': 404471.1392995899, 'ASE': 0.0, 'R': 0.5127284365345239, 'cost': 0.0}, 'template_vs_baseline': {'E_cool': 0, 'E_heat': -0.017551761935662994, 'ASE': 0}, 'optimized_vs_baseline': {'E_cool': 0, 'E_heat': -0.025456873069047866, 'ASE': 0}, 'location': 'NOR'}
+2026-02-02 01:25:39,381 - INFO - Evaluation for Riyadh: {'baseline': {'E_cool': np.float64(652177.1108212703), 'E_heat': np.float64(31347.612603711077), 'ASE': np.float64(26098.20828772295), 'R': 0.2, 'cost': 0.0}, 'template': {'E_cool': np.float64(557994.7465362073), 'E_heat': np.float64(31120.348368847062), 'ASE': np.float64(22554.20943420576), 'R': np.float64(0.30979928882531393), 'cost': 0.0}, 'optimized': {'E_cool': np.float64(321466.5821496098), 'E_heat': np.float64(30549.60040864072), 'ASE': np.float64(13653.86434546423), 'R': np.float64(0.5855475611685278), 'cost': 0.0}, 'template_vs_baseline': {'E_cool': np.float64(-0.14441225047972248), 'E_heat': np.float64(-0.0072498099851186154), 'ASE': np.float64(-0.1357947187196122)}, 'optimized_vs_baseline': {'E_cool': np.float64(-0.5070869909175515), 'E_heat': np.float64(-0.025456873069047863), 'ASE': np.float64(-0.4768275203057812)}, 'location': 'Riyadh'}
+2026-02-02 01:25:39,382 - INFO - Saved performance comparison
+2026-02-02 01:25:39,382 - INFO - Performing cross validation
+2026-02-02 01:25:39,383 - INFO - Saved cross validation errors
+2026-02-02 01:25:39,383 - INFO - Cross validation results: {'cv_err_loc': 0.0, 'cv_err_sce': 0.0, 'Err_ext': 0.0}
+2026-02-02 01:25:39,383 - INFO - Generating plots
+2026-02-02 01:25:39,798 - INFO - Generated CDD vs HDD scatter plot
+2026-02-02 01:25:40,134 - INFO - Generated feature bar plot
+2026-02-02 01:25:40,483 - INFO - Generated rules plot
+2026-02-02 01:25:41,075 - INFO - Generated performance comparison plot
+2026-02-02 01:25:41,392 - INFO - Generated Riyadh external validation plot
+2026-02-02 01:25:41,392 - INFO - Task 3 generalization completed successfully
